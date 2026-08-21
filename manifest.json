@@ -1,0 +1,17 @@
+{
+  "name": "M.K. Printers & Stationers",
+  "short_name": "MK Printers",
+  "description": "Government Order Supplier & Commercial Printing Press in Sitapur (U.P.)",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0c192c",
+  "theme_color": "#0c192c",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

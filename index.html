@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>M.K. Printers &amp; Stationers | Sitapur (U.P.)</title>
+  <meta name="description" content="M.K. Printers & Stationers - Government Order Supplier & Commercial Printing Press. Near Police Chowki, Holi Nagar, Station Road, Thompsonganj, Sitapur, Uttar Pradesh - 261001. Phone: +91 93366 21866." />
+  <meta name="theme-color" content="#0c192c" />
+
+  <!-- PWA & Chrome App Manifest -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0c192c',       /* Deep Navy: C:100 M:90 Y:40 K:45 */
+              navyDark: '#081220',   /* Deep base */
+              navyCard: '#11223b',   /* Surface */
+              navyBorder: '#1d355a', /* Borders */
+              gold: '#c89f55',       /* Warm Gold: C:20 M:35 Y:85 K:5 */
+              goldLight: '#dec183',  /* Light Gold */
+              goldDark: '#a78037',   /* Deep Gold */
+              white: '#ffffff',      /* Pure White: C:0 M:0 Y:0 K:0 */
+            }
+          },
+          fontFamily: {
+            serif: ['"Times New Roman"', 'Times', 'serif'],
+            monoHeading: ['"Times New Roman"', 'Times', 'serif'],
+            body: ['"Times New Roman"', 'Times', 'serif'],
+          },
+          boxShadow: {
+            'gold-glow': '0 0 25px rgba(200, 159, 85, 0.25)',
+            'gold-glow-lg': '0 0 45px rgba(200, 159, 85, 0.35)',
+            'card-3d': '0 25px 50px -12px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(200, 159, 85, 0.3)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Global Times New Roman for text elements (Exempting icon fonts) */
+    body, h1, h2, h3, h4, h5, h6, p, span:not(.fa):not([class*="fa-"]), a:not(.fa), button:not(.fa), input, select, textarea, label, div:not(.fa) {
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    /* Preserve FontAwesome Icon Fonts */
+    .fa, .fas, .far, .fal, .fad, .fab, .fa-solid, .fa-regular, .fa-brands, [class^="fa-"], [class*=" fa-"] {
+      font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "FontAwesome" !important;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+    }
+    .fa-brands, .fab {
+      font-family: "Font Awesome 6 Brands" !important;
+    }
+
+    body {
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    /* Custom Gold Selection */
+    ::selection {
+      background: #c89f55;
+      color: #0c192c;
+    }
+    
+    /* Custom Luxury Dark Scrollbar */
+    ::-webkit-scrollbar {
+      width: 9px;
+      height: 9px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #081220;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1d355a;
+      border-radius: 4px;
+      border: 1px solid rgba(200, 159, 85, 0.3);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #c89f55;
+    }
+
+    /* WebKit Dark Autofill Overrides */
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus, 
+    textarea:-webkit-autofill,
+    select:-webkit-autofill {
+      -webkit-text-fill-color: #ffffff !important;
+      -webkit-box-shadow: 0 0 0px 1000px #081220 inset !important;
+      transition: background-color 5000s ease-in-out 0s !important;
+    }
+
+    /* Touch target optimizations */
+    input, select, textarea, button, a {
+      touch-action: manipulation;
+    }
+
+    /* Mobile iOS input auto-zoom prevention */
+    @media (max-width: 640px) {
+      input, select, textarea {
+        font-size: 17px !important;
+      }
+    }
+
+    /* 3D Perspective Flip Card */
+    .card-3d-wrap {
+      perspective: 1200px;
+    }
+    .card-3d-inner {
+      transition: transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+      transform-style: preserve-3d;
+    }
+    .card-3d-inner.flipped {
+      transform: rotateY(180deg);
+    }
+    .card-face {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .card-back-face {
+      transform: rotateY(180deg);
+    }
+
+    /* Precise Navy Background Grid */
+    .bg-grid-pattern {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(200, 159, 85, 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(200, 159, 85, 0.045) 1px, transparent 1px);
+    }
+
+    /* Metallic Gold Gradient Text */
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #dec183 0%, #c89f55 50%, #a78037 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* High-Fidelity Glassmorphism Panel */
+    .glass-panel {
+      background: rgba(17, 34, 59, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(200, 159, 85, 0.25);
+      box-shadow: inset 0 1px 0 0 rgba(200, 159, 85, 0.15), 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Transparent Crest Ambient Glow */
+    .logo-gold-glow {
+      filter: drop-shadow(0 4px 22px rgba(200, 159, 85, 0.35));
+    }
+
+    /* Pulse highlight on selected service */
+    @keyframes highlightPulse {
+      0% { box-shadow: 0 0 0 0 rgba(200, 159, 85, 0.7); }
+      70% { box-shadow: 0 0 0 12px rgba(200, 159, 85, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(200, 159, 85, 0); }
+    }
+    .pulse-highlight {
+      animation: highlightPulse 1.2s ease-out 2;
+    }
+  </style>
+</head>
+<body class="bg-brand-navy text-slate-200 antialiased selection:bg-brand-gold selection:text-brand-navy min-h-screen flex flex-col justify-between pb-20 sm:pb-0">
+
+  <!-- Accessible Skip Link -->
+  <a href="#orderSection" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-gold focus:text-brand-navy focus:font-bold focus:rounded-lg">
+    Skip to Order Form
+  </a>
+
+  <!-- Toast Notification Feedback Banner -->
+  <div id="toastNotification" role="alert" aria-live="polite" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-brand-navyDark border border-brand-gold text-brand-white px-6 py-3 rounded-xl shadow-gold-glow text-sm font-semibold tracking-wider uppercase opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-4">
+    <span id="toastMsg">Notification</span>
+  </div>
+
+  <!-- SINGLE UNIFIED CLEAN HEADER -->
+  <header class="border-b border-brand-navyBorder bg-brand-navyDark/95 backdrop-blur-2xl sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-20 sm:h-24 flex items-center justify-between">
+      
+      <!-- Official Brand Logo & Identity -->
+      <a href="#" aria-label="M.K. Printers & Stationers Home" class="flex items-center gap-3 sm:gap-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-lg p-1">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center shrink-0">
+          <img src="logo.png" alt="M.K. Printers Official Gold Crest Logo" class="w-full h-full object-contain logo-gold-glow" width="56" height="56" />
+        </div>
+        <div>
+          <div class="font-bold text-base sm:text-xl tracking-wider text-brand-white">
+            M.K. <span class="text-sm sm:text-base uppercase tracking-widest text-slate-300 font-semibold">Printers</span>
+          </div>
+          <p class="text-xs sm:text-sm uppercase tracking-[0.2em] text-brand-gold font-semibold">&amp; Stationers</p>
+        </div>
+      </a>
+
+      <!-- Clean Header Action Buttons -->
+      <nav aria-label="Main Navigation" class="flex items-center gap-2 sm:gap-3.5">
+        
+        <!-- Direct Phone Link -->
+        <a href="tel:+919336621866" class="px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-brand-navyCard hover:bg-brand-navyBorder border border-brand-gold/40 text-brand-white text-sm sm:text-base font-bold tracking-wide uppercase transition flex items-center gap-2 active:scale-95 focus-visible:ring-2 focus-visible:ring-brand-gold">
+          <i class="fa-solid fa-phone text-brand-gold text-sm" aria-hidden="true"></i>
+          <span class="hidden sm:inline">+91 93366 21866</span>
+        </a>
+
+        <!-- WhatsApp Quick Link -->
+        <a href="https://wa.me/919336621866?text=Hello%20M.K.%20Printers,%20I%20have%20an%20inquiry." target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-brand-navyCard hover:bg-brand-navyBorder border border-brand-gold/30 text-brand-gold text-sm sm:text-base font-bold tracking-wide uppercase transition flex items-center gap-2 active:scale-95 focus-visible:ring-2 focus-visible:ring-brand-gold">
+          <i class="fa-brands fa-whatsapp text-base" aria-hidden="true"></i>
+          <span class="hidden md:inline">WhatsApp</span>
+        </a>
+
+        <!-- Place Order Button -->
+        <a href="#orderSection" class="px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-brand-gold hover:bg-brand-goldLight text-brand-navy font-bold text-sm sm:text-base tracking-wide uppercase transition shadow-gold-glow flex items-center gap-2 active:scale-95 focus-visible:ring-2 focus-visible:ring-brand-white">
+          <i class="fa-solid fa-paper-plane text-sm" aria-hidden="true"></i> Place Order
+        </a>
+
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- MAIN PORTAL BODY -->
+  <main class="bg-grid-pattern py-10 sm:py-16 flex-grow">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16">
+      
+      <!-- HERO BRAND SPOTLIGHT -->
+      <section aria-labelledby="heroHeading" class="text-center max-w-3xl mx-auto space-y-5">
+        
+        <!-- Large Transparent Center Crest -->
+        <div class="w-28 h-28 sm:w-36 sm:h-36 mx-auto flex items-center justify-center">
+          <img src="logo.png" alt="M.K. Printers Master Emblem" class="w-full h-full object-contain logo-gold-glow" width="144" height="144" />
+        </div>
+
+        <!-- Official Authorization Tag -->
+        <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-gold/10 border border-brand-gold/40 text-xs sm:text-sm font-bold uppercase tracking-widest text-brand-goldLight">
+          <span class="w-2 h-2 rounded-full bg-brand-gold shrink-0"></span>
+          <span>Government Order Supplier &bull; Sitapur (U.P.)</span>
+        </div>
+
+        <!-- Main Business Title -->
+        <h1 id="heroHeading" class="font-black text-3xl sm:text-5xl lg:text-6xl text-brand-white tracking-tight leading-tight">
+          M.K. PRINTERS &amp; <span class="text-gold-gradient">STATIONERS</span>
+        </h1>
+
+        <!-- Scope Subtitle -->
+        <p class="text-slate-200 text-sm sm:text-lg lg:text-xl uppercase tracking-wider font-semibold px-2">
+          All Kind of Printing Works &bull; Government &amp; Commercial Solutions
+        </p>
+
+        <!-- Official Landmark Address Bar with 1-Click Copy -->
+        <div class="flex flex-wrap items-center justify-center gap-2.5 pt-2">
+          <span class="text-center text-xs sm:text-sm md:text-base text-slate-300 max-w-2xl font-medium">
+            Near Police Chowki, Holi Nagar, Station Road, Thompsonganj, Sitapur, Uttar Pradesh - 261001
+          </span>
+          <button type="button" id="btnCopyAddress" aria-label="Copy Address to Clipboard" class="px-3 py-1.5 rounded bg-brand-navyCard border border-brand-gold/40 hover:border-brand-gold text-brand-gold text-xs sm:text-sm font-bold uppercase tracking-wider transition active:scale-95 flex items-center gap-1.5 focus-visible:ring-2 focus-visible:ring-brand-gold">
+            <i class="fa-regular fa-copy" aria-hidden="true"></i> Copy
+          </button>
+        </div>
+
+      </section>
+
+      <!-- INTERACTIVE 3D DIGITAL IDENTITY CARD -->
+      <section aria-labelledby="cardHeading" class="space-y-4">
+        
+        <div class="text-center space-y-1">
+          <h2 id="cardHeading" class="text-xs sm:text-sm uppercase tracking-widest text-brand-gold font-bold">Interactive Identity</h2>
+          <p class="text-xs sm:text-sm text-slate-300 uppercase tracking-wide">Tap card below to inspect front &amp; back</p>
+        </div>
+
+        <div class="card-3d-wrap max-w-xl mx-auto min-h-[240px] sm:min-h-[320px] flex items-center justify-center">
+          <div id="simpleCard" tabindex="0" role="button" aria-label="Click to flip digital business card" class="card-3d-inner relative w-full aspect-[1.75/1] rounded-2xl shadow-card-3d cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold">
+            
+            <!-- FRONT FACE -->
+            <div class="card-face absolute inset-0 rounded-2xl bg-[#0c192c] border border-brand-gold/40 p-5 sm:p-8 flex flex-col justify-between overflow-hidden shadow-2xl">
+              <div class="flex items-center justify-between z-10">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+                  <img src="logo.png" alt="MK Crest" class="w-full h-full object-contain logo-gold-glow" width="48" height="48" />
+                </div>
+                <div class="flex gap-1.5" aria-hidden="true">
+                  <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-brand-gold"></span>
+                  <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-brand-white"></span>
+                  <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-brand-goldLight"></span>
+                </div>
+              </div>
+
+              <div class="text-center z-10 my-auto">
+                <div class="font-extrabold text-lg sm:text-2xl md:text-3xl text-brand-white tracking-wider sm:tracking-widest uppercase">
+                  M.K. PRINTERS &amp; STATIONERS
+                </div>
+                <div class="h-[1px] w-24 sm:w-36 bg-gradient-to-r from-transparent via-brand-gold to-transparent mx-auto my-2"></div>
+                <div class="text-[10px] sm:text-xs md:text-sm font-bold text-brand-gold tracking-[0.2em] uppercase">
+                  ALL KIND OF PRINTING WORKS
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between z-10 text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-widest text-slate-300">
+                <span class="px-2 py-0.5 rounded bg-brand-gold/15 border border-brand-gold/40 text-brand-gold font-bold">
+                  Govt. Supplier
+                </span>
+                <span class="text-brand-white font-semibold">Sitapur (U.P.)</span>
+              </div>
+            </div>
+
+            <!-- BACK FACE -->
+            <div class="card-face card-back-face absolute inset-0 rounded-2xl bg-[#081220] border border-brand-gold/40 p-5 sm:p-8 flex flex-col justify-between overflow-hidden shadow-2xl">
+              
+              <div class="flex items-center justify-between z-10 border-b border-brand-gold/20 pb-2">
+                <div>
+                  <div class="font-bold text-xs sm:text-base text-brand-gold tracking-wider uppercase">M.K. PRINTERS &amp; STATIONERS</div>
+                  <div class="text-[9px] sm:text-xs text-slate-300 uppercase tracking-wider">Government Order Supplier</div>
+                </div>
+                <span class="text-[9px] sm:text-xs font-bold text-brand-gold px-2 py-0.5 rounded bg-brand-gold/10 border border-brand-gold/30">Verified</span>
+              </div>
+
+              <div class="space-y-2 sm:space-y-2.5 z-10 my-auto text-xs sm:text-sm">
+                <div class="flex items-center gap-2.5 text-slate-200">
+                  <span class="w-5 h-5 sm:w-6 sm:h-6 rounded bg-brand-navyCard border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs" aria-hidden="true">
+                    <i class="fa-solid fa-phone"></i>
+                  </span>
+                  <span class="font-bold text-brand-white tracking-wide text-xs sm:text-sm">+91 93366 21866</span>
+                </div>
+
+                <div class="flex items-center gap-2.5 text-slate-200">
+                  <span class="w-5 h-5 sm:w-6 sm:h-6 rounded bg-brand-navyCard border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs" aria-hidden="true">
+                    <i class="fa-solid fa-envelope"></i>
+                  </span>
+                  <span class="font-medium text-slate-200 text-xs sm:text-sm truncate">abhinay368@gmail.com</span>
+                </div>
+
+                <div class="flex items-start gap-2.5 text-slate-200">
+                  <span class="w-5 h-5 sm:w-6 sm:h-6 rounded bg-brand-navyCard border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0 mt-0.5" aria-hidden="true">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </span>
+                  <span class="font-medium text-slate-200 text-[11px] sm:text-xs leading-tight">Near Police Chowki, Holi Nagar, Station Road, Thompsonganj, Sitapur (261001)</span>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between z-10 text-[8px] sm:text-[10px] uppercase text-slate-400">
+                <span>3.5" x 2.0"</span>
+                <span class="text-brand-gold font-semibold">Sitapur, Uttar Pradesh</span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- OFFICIAL PRODUCTS & SERVICES (13 CATALOG ITEMS) -->
+      <section id="servicesSection" aria-labelledby="servicesHeading" class="glass-panel rounded-2xl p-6 sm:p-10 space-y-6">
+        
+        <div class="flex items-center justify-between border-b border-brand-navyBorder pb-4">
+          <div>
+            <h2 id="servicesHeading" class="font-bold text-lg sm:text-xl md:text-2xl text-brand-white uppercase tracking-wider">
+              M.K. Printers &amp; Stationers Provides
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-300 mt-1">Tap any service below to select and place order directly</p>
+          </div>
+          <div class="hidden sm:flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-brand-gold" aria-hidden="true"></span>
+            <span class="text-xs font-bold uppercase text-brand-gold tracking-widest">13 Services</span>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+          
+          <button type="button" data-service="Visiting cards and business cards" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
+            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <span class="text-brand-white">Visiting cards and business cards</span>
+          </button>
+
+          <button type="button" data-service="Letterheads and envelopes" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
+            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <span class="text-brand-white">Letterheads and envelopes</span>
+          </button>
+
+          <button type="button" data-service="Bill books and receipt books" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
+            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <span class="text-brand-white">Bill books and receipt books</span>
+          </button>
+
+          <button type="button" data-service="Pamphlets, flyers and brochures" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
+            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <span class="text-brand-white">Pamphlets, flyers and brochures</span>
+          </button>
+
+          <button type="button" data-service="Posters and banners" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
+            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <span class="text-brand-white">Posters and banners</span>
+          </button>
+
+          <button type="button" data-service="Wedding and invitation cards" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
+            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <span class="text-brand-white">Wedding and invitation cards</span>
+          </button>
+
+          <button type="button" data-service="School and office stationery" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
+            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <span class="text-brand-white">School and office stationery</span>
+          </button>
+
+          <button type="button" data-service="Registers and notebooks" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
+            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <span class="text-brand-white">Registers and notebooks</span>
+          </button>
+
+          <button type="button" data-service="Government and office printing work" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
+            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <span class="text-brand-white">Government and office printing work</span>
+          </button>
+
+          <button type="button" data-service="Catalogue and booklet printing" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
+            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <span class="text-brand-white">Catalogue and booklet printing</span>
+          </button>
+
+          <button type="button" data-service="Custom printing and graphic designing" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
+            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <span class="text-brand-white">Custom printing and graphic designing</span>
+          </button>
+
+          <button type="button" data-service="Bulk commercial printing" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
+            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <span class="text-brand-white">Bulk commercial printing</span>
+          </button>
+
+          <button type="button" data-service="General stationery supplies" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 sm:col-span-2 lg:col-span-3 focus-visible:ring-2 focus-visible:ring-brand-gold">
+            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <span class="text-brand-white">General stationery supplies</span>
+          </button>
+
+        </div>
+
+      </section>
+
+      <!-- FAST DIRECT ORDER DESK -->
+      <section id="orderSection" aria-labelledby="orderHeading" class="glass-panel rounded-2xl p-6 sm:p-10 border-brand-gold/30 space-y-6">
+        
+        <div class="border-b border-brand-navyBorder pb-4">
+          <div class="text-xs uppercase tracking-widest text-brand-gold font-bold">Fast Dispatch Hub</div>
+          <h2 id="orderHeading" class="font-bold text-xl sm:text-2xl text-brand-white uppercase tracking-wider mt-1">
+            Direct Order &amp; Inquiry Desk
+          </h2>
+        </div>
+
+        <form id="orderForm" class="space-y-4 sm:space-y-5" novalidate>
+          
+          <div class="grid sm:grid-cols-2 gap-4 sm:gap-5">
+            <div>
+              <label for="orderName" class="block text-xs sm:text-sm uppercase tracking-wider text-slate-200 mb-1.5 font-bold">Your Name / Department</label>
+              <input type="text" id="orderName" name="orderName" autocomplete="name" placeholder="Full Name or Department" class="w-full bg-brand-navyDark border border-brand-navyBorder rounded-xl px-4 py-3.5 text-base sm:text-sm text-brand-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition" />
+            </div>
+
+            <div>
+              <label for="orderPhone" class="block text-xs sm:text-sm uppercase tracking-wider text-slate-200 mb-1.5 font-bold">Phone Number</label>
+              <input type="tel" id="orderPhone" name="orderPhone" autocomplete="tel" placeholder="+91 XXXXX XXXXX" class="w-full bg-brand-navyDark border border-brand-navyBorder rounded-xl px-4 py-3.5 text-base sm:text-sm text-brand-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition" />
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4 sm:gap-5">
+            <div>
+              <label for="orderProduct" class="block text-xs sm:text-sm uppercase tracking-wider text-slate-200 mb-1.5 font-bold">Selected Service / Product</label>
+              <select id="orderProduct" name="orderProduct" class="w-full bg-brand-navyDark border border-brand-navyBorder rounded-xl px-4 py-3.5 text-base sm:text-sm text-brand-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition">
+                <option value="Visiting cards and business cards">Visiting cards and business cards</option>
+                <option value="Letterheads and envelopes">Letterheads and envelopes</option>
+                <option value="Bill books and receipt books">Bill books and receipt books</option>
+                <option value="Pamphlets, flyers and brochures">Pamphlets, flyers and brochures</option>
+                <option value="Posters and banners">Posters and banners</option>
+                <option value="Wedding and invitation cards">Wedding and invitation cards</option>
+                <option value="School and office stationery">School and office stationery</option>
+                <option value="Registers and notebooks">Registers and notebooks</option>
+                <option value="Government and office printing work">Government and office printing work</option>
+                <option value="Catalogue and booklet printing">Catalogue and booklet printing</option>
+                <option value="Custom printing and graphic designing">Custom printing and graphic designing</option>
+                <option value="Bulk commercial printing">Bulk commercial printing</option>
+                <option value="General stationery supplies">General stationery supplies</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="orderQuantity" class="block text-xs sm:text-sm uppercase tracking-wider text-slate-200 mb-1.5 font-bold">Quantity / Scope</label>
+              <input type="text" id="orderQuantity" name="orderQuantity" placeholder="e.g. 1000 Pcs / 10 Books" class="w-full bg-brand-navyDark border border-brand-navyBorder rounded-xl px-4 py-3.5 text-base sm:text-sm text-brand-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition" />
+            </div>
+          </div>
+
+          <div>
+            <label for="orderNotes" class="block text-xs sm:text-sm uppercase tracking-wider text-slate-200 mb-1.5 font-bold">Specifications / Note</label>
+            <textarea id="orderNotes" name="orderNotes" rows="3" placeholder="Paper GSM, binding, numbering details, or official department specifications..." class="w-full bg-brand-navyDark border border-brand-navyBorder rounded-xl px-4 py-3.5 text-base sm:text-sm text-brand-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition"></textarea>
+          </div>
+
+          <!-- Dual Transmission Triggers -->
+          <div class="grid sm:grid-cols-2 gap-3.5 pt-2">
+            
+            <!-- WhatsApp Button -->
+            <button type="button" id="btnSendWhatsApp" class="w-full py-4 rounded-xl bg-brand-gold hover:bg-brand-goldLight active:scale-[0.98] text-brand-navy font-bold text-sm sm:text-base uppercase tracking-wider transition shadow-gold-glow flex items-center justify-center gap-2.5 focus-visible:ring-2 focus-visible:ring-brand-white">
+              <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i> Order via WhatsApp Direct
+            </button>
+
+            <!-- Email Button -->
+            <button type="button" id="btnSendEmail" class="w-full py-4 rounded-xl bg-brand-navyDark hover:bg-brand-navyBorder active:scale-[0.98] border border-brand-gold/40 text-brand-white font-bold text-sm sm:text-base uppercase tracking-wider transition flex items-center justify-center gap-2.5 focus-visible:ring-2 focus-visible:ring-brand-gold">
+              <i class="fa-solid fa-envelope text-brand-gold text-lg" aria-hidden="true"></i> Order via Direct Email
+            </button>
+
+          </div>
+
+        </form>
+
+      </section>
+
+      <!-- GEOGRAPHIC LOCATION & LIVE DIRECTIONS SECTION -->
+      <section id="mapSection" aria-labelledby="mapHeading" class="glass-panel rounded-2xl p-6 sm:p-10 border-brand-gold/30 space-y-5">
+        
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-brand-navyBorder pb-4">
+          <div>
+            <div class="text-xs uppercase tracking-widest text-brand-gold font-bold">Exact Geographic Navigation</div>
+            <h2 id="mapHeading" class="font-bold text-xl sm:text-2xl text-brand-white uppercase tracking-wider mt-1">
+              Workshop Location &amp; Directions
+            </h2>
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=Near+Police+Chowki,+Holi+Nagar,+Station+Road,+Thompsonganj,+Sitapur,+Uttar+Pradesh+261001" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-lg bg-brand-gold hover:bg-brand-goldLight text-brand-navy font-bold text-xs sm:text-sm uppercase tracking-wider transition flex items-center gap-2 self-start sm:self-auto active:scale-95 shadow-gold-glow focus-visible:ring-2 focus-visible:ring-brand-white">
+            <i class="fa-solid fa-diamond-turn-right text-sm" aria-hidden="true"></i> Open Live Directions
+          </a>
+        </div>
+
+        <!-- Landmark Description Bar -->
+        <div class="p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs sm:text-sm text-slate-300">
+          <div class="flex items-start sm:items-center gap-2.5">
+            <i class="fa-solid fa-location-pin text-brand-gold text-base shrink-0 mt-0.5 sm:mt-0" aria-hidden="true"></i>
+            <span><strong>Exact Landmark:</strong> Near Police Chowki, Holi Nagar, Station Road, Thompsonganj, Sitapur (U.P.) - 261001</span>
+          </div>
+          <span class="text-xs uppercase tracking-wider text-brand-goldLight font-bold shrink-0">Central Sitapur</span>
+        </div>
+
+        <!-- Embedded Interactive Google Map -->
+        <div class="relative w-full h-[300px] sm:h-[380px] rounded-xl overflow-hidden border border-brand-gold/30 shadow-2xl bg-brand-navyDark">
+          <iframe 
+            title="M.K. Printers Exact Location Map"
+            src="https://maps.google.com/maps?q=Holi+Nagar+Station+Road+Thompsonganj+Sitapur+Uttar+Pradesh+261001&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+            class="w-full h-full border-0 filter contrast-[1.08] saturate-[1.1]" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </section>
+
+      <!-- DIRECT CONTACT & SAVE CONTACT CHANNELS BAR -->
+      <section aria-labelledby="contactChannelsHeading" class="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
+        <h2 id="contactChannelsHeading" class="sr-only">Contact Channels</h2>
+        
+        <!-- Phone Desk -->
+        <a href="tel:+919336621866" class="glass-panel rounded-xl p-4 sm:p-5 text-center transition active:scale-95 group block focus-visible:ring-2 focus-visible:ring-brand-gold">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-navyDark border border-brand-gold/30 flex items-center justify-center text-brand-gold text-base sm:text-lg mx-auto mb-2" aria-hidden="true">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="text-[10px] sm:text-xs uppercase tracking-widest text-slate-400 font-bold">Call Desk</div>
+          <div class="font-bold text-sm sm:text-base text-brand-white mt-1">+91 93366 21866</div>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/919336621866?text=Hello%20M.K.%20Printers,%20I%20have%20an%20inquiry." target="_blank" rel="noopener noreferrer" class="glass-panel rounded-xl p-4 sm:p-5 text-center transition active:scale-95 group block border-brand-gold/40 focus-visible:ring-2 focus-visible:ring-brand-gold">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-navyDark border border-brand-gold/30 flex items-center justify-center text-brand-gold text-base sm:text-lg mx-auto mb-2" aria-hidden="true">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div class="text-[10px] sm:text-xs uppercase tracking-widest text-brand-goldLight font-bold">WhatsApp</div>
+          <div class="font-bold text-sm sm:text-base text-brand-white mt-1">+91 93366 21866</div>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:abhinay368@gmail.com" class="glass-panel rounded-xl p-4 sm:p-5 text-center transition active:scale-95 group block focus-visible:ring-2 focus-visible:ring-brand-gold">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-navyDark border border-brand-gold/30 flex items-center justify-center text-brand-gold text-base sm:text-lg mx-auto mb-2" aria-hidden="true">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="text-[10px] sm:text-xs uppercase tracking-widest text-slate-400 font-bold">Email Desk</div>
+          <div class="font-bold text-xs sm:text-sm text-brand-white mt-1 truncate">abhinay368@gmail.com</div>
+        </a>
+
+        <!-- Save Contact Card -->
+        <a href="MK_Printers_Contact.vcf" download="MK_Printers_Contact.vcf" class="glass-panel rounded-xl p-4 sm:p-5 text-center transition active:scale-95 group block border-brand-gold/30 hover:border-brand-gold focus-visible:ring-2 focus-visible:ring-brand-gold">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-navyDark border border-brand-gold/30 flex items-center justify-center text-brand-gold text-base sm:text-lg mx-auto mb-2" aria-hidden="true">
+            <i class="fa-solid fa-address-book"></i>
+          </div>
+          <div class="text-[10px] sm:text-xs uppercase tracking-widest text-brand-gold font-bold">Save Contact</div>
+          <div class="font-bold text-xs sm:text-sm text-brand-white mt-1">Add to Phone</div>
+        </a>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-brand-navyBorder bg-brand-navyDark py-8 text-sm text-slate-400">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+      <div class="flex items-center justify-center md:justify-start gap-3">
+        <div class="w-8 h-8 flex items-center justify-center shrink-0">
+          <img src="logo.png" alt="Logo" class="w-full h-full object-contain logo-gold-glow" width="32" height="32" />
+        </div>
+        <div>
+          <div class="font-bold text-brand-white uppercase tracking-wider text-sm sm:text-base">M.K. PRINTERS &amp; STATIONERS</div>
+          <div class="text-xs sm:text-sm text-slate-300">Near Police Chowki, Holi Nagar, Station Road, Thompsonganj, Sitapur, Uttar Pradesh, 261001</div>
+        </div>
+      </div>
+      <div class="text-xs sm:text-sm uppercase tracking-wider text-brand-gold font-bold shrink-0">
+        All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+  <!-- STICKY BOTTOM ACTION BAR FOR MOBILE (Thumb Navigation) -->
+  <div class="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#081220]/95 backdrop-blur-lg border-t border-[#1d355a] p-3 flex items-center gap-2.5 shadow-2xl">
+    <a href="tel:+919336621866" class="flex-1 py-3.5 rounded-xl bg-brand-navyCard border border-brand-gold/40 text-brand-white text-sm font-bold tracking-wider uppercase text-center flex items-center justify-center gap-2 active:scale-95">
+      <i class="fa-solid fa-phone text-brand-gold text-sm" aria-hidden="true"></i> Call Now
+    </a>
+    <a href="https://wa.me/919336621866?text=Hello%20M.K.%20Printers,%20I%20want%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer" class="flex-1 py-3.5 rounded-xl bg-brand-gold text-brand-navy font-bold text-sm tracking-wider uppercase text-center flex items-center justify-center gap-2 shadow-gold-glow active:scale-95">
+      <i class="fa-brands fa-whatsapp text-base" aria-hidden="true"></i> WhatsApp
+    </a>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Toast notification system
+      const toast = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMsg');
+      let toastTimer = null;
+
+      function showToast(msg) {
+        if (!toast || !toastMsg) return;
+        toastMsg.textContent = msg;
+        toast.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
+        toast.classList.add('opacity-100', 'translate-y-0');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toast.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
+          toast.classList.remove('opacity-100', 'translate-y-0');
+        }, 2400);
+      }
+
+      // Copy Address Action
+      const copyBtn = document.getElementById('btnCopyAddress');
+      if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+          const addr = "Near Police Chowki, Holi Nagar, Station Road, Thompsonganj, Sitapur, Uttar Pradesh, 261001";
+          navigator.clipboard.writeText(addr).then(() => {
+            showToast("Address Copied to Clipboard");
+          }).catch(() => {
+            showToast("Near Police Chowki, Holi Nagar, Sitapur 261001");
+          });
+        });
+      }
+
+      // 3D Card Flip (Touch, Click & Enter Key)
+      const card = document.getElementById('simpleCard');
+      if (card) {
+        const toggleFlip = () => card.classList.toggle('flipped');
+        card.addEventListener('click', toggleFlip);
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleFlip();
+          }
+        });
+      }
+
+      // 1-Click Service Picking from List
+      const productDropdown = document.getElementById('orderProduct');
+      const serviceCards = document.querySelectorAll('.service-pick-card');
+
+      serviceCards.forEach(cardEl => {
+        cardEl.addEventListener('click', () => {
+          const serv = cardEl.getAttribute('data-service');
+          if (serv && productDropdown) {
+            productDropdown.value = serv;
+            showToast("Selected: " + serv);
+            
+            const orderSec = document.getElementById('orderSection');
+            if (orderSec) {
+              orderSec.scrollIntoView({ behavior: 'smooth' });
+              // Highlight pulse animation on dropdown
+              productDropdown.classList.add('pulse-highlight');
+              setTimeout(() => {
+                productDropdown.classList.remove('pulse-highlight');
+              }, 2500);
+            }
+          }
+        });
+      });
+
+      // Helper to collect form data
+      function getOrderPayload() {
+        const name = document.getElementById('orderName')?.value.trim() || 'Client';
+        const phone = document.getElementById('orderPhone')?.value.trim() || 'Not provided';
+        const product = document.getElementById('orderProduct')?.value || 'General Printing';
+        const quantity = document.getElementById('orderQuantity')?.value.trim() || 'Not specified';
+        const notes = document.getElementById('orderNotes')?.value.trim() || 'None';
+
+        return { name, phone, product, quantity, notes };
+      }
+
+      // WhatsApp Direct Transmission
+      const waBtn = document.getElementById('btnSendWhatsApp');
+      if (waBtn) {
+        waBtn.addEventListener('click', () => {
+          const { name, phone, product, quantity, notes } = getOrderPayload();
+
+          const message = 
+            `*M.K. PRINTERS & STATIONERS - DIRECT ORDER*\n\n` +
+            `*Client / Department:* ${name}\n` +
+            `*Contact Phone:* ${phone}\n` +
+            `*Product Selected:* ${product}\n` +
+            `*Quantity / Scope:* ${quantity}\n` +
+            `*Specifications / Note:* ${notes}\n\n` +
+            `*Address:* Near Police Chowki, Holi Nagar, Station Road, Thompsonganj, Sitapur, Uttar Pradesh, 261001\n\n` +
+            `Please confirm receipt and turnaround timeline.`;
+
+          window.open(`https://wa.me/919336621866?text=${encodeURIComponent(message)}`, '_blank');
+        });
+      }
+
+      // Email Direct Transmission
+      const mailBtn = document.getElementById('btnSendEmail');
+      if (mailBtn) {
+        mailBtn.addEventListener('click', () => {
+          const { name, phone, product, quantity, notes } = getOrderPayload();
+
+          const subject = `Order Inquiry: ${product} - ${name}`;
+          const body = 
+            `Dear M.K. Printers & Stationers,\n\n` +
+            `I am submitting an order inquiry with the following details:\n\n` +
+            `- Client / Department: ${name}\n` +
+            `- Phone Number: ${phone}\n` +
+            `- Product / Service: ${product}\n` +
+            `- Quantity / Scope: ${quantity}\n` +
+            `- Additional Specifications: ${notes}\n\n` +
+            `Workshop Address: Near Police Chowki, Holi Nagar, Station Road, Thompsonganj, Sitapur, Uttar Pradesh, 261001\n\n` +
+            `Please review and reply with confirmation.\n\n` +
+            `Regards,\n${name}`;
+
+          window.location.href = `mailto:abhinay368@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
