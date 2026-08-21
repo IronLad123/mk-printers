@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mk-offset-v3';
+const CACHE_NAME = 'mk-offset-v10';
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();
@@ -17,7 +17,7 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // Network first, fallback to cache
+  // Always fetch network first, falling back to cache
   event.respondWith(
     fetch(event.request)
       .then((response) => {
