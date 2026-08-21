@@ -2,10 +2,12 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
   <title>M.K. Printers &amp; Stationers | Sitapur (U.P.)</title>
-  <meta name="description" content="M.K. Printers & Stationers - Government Order Supplier & Commercial Printing Press. Near Police Chowki, Holi Nagar, Station Road, Thompsonganj, Sitapur, Uttar Pradesh - 261001. Phone: +91 93366 21866." />
+  <meta name="description" content="M.K. Printers & Stationers - Government Order Supplier & Commercial Printing Press in Sitapur (U.P.). Near Police Chowki, Holi Nagar, Station Road, Thompsonganj, Sitapur - 261001. Phone: +91 93366 21866." />
   <meta name="theme-color" content="#0c192c" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
   <!-- PWA & Chrome App Manifest -->
   <link rel="manifest" href="manifest.json" />
@@ -30,7 +32,7 @@
               gold: '#c89f55',       /* Warm Gold: C:20 M:35 Y:85 K:5 */
               goldLight: '#dec183',  /* Light Gold */
               goldDark: '#a78037',   /* Deep Gold */
-              white: '#ffffff',      /* Pure White: C:0 M:0 Y:0 K:0 */
+              white: '#ffffff',      /* Pure White */
             }
           },
           fontFamily: {
@@ -41,7 +43,8 @@
           boxShadow: {
             'gold-glow': '0 0 25px rgba(200, 159, 85, 0.25)',
             'gold-glow-lg': '0 0 45px rgba(200, 159, 85, 0.35)',
-            'card-3d': '0 25px 50px -12px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(200, 159, 85, 0.3)',
+            'card-3d': '0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(200, 159, 85, 0.3)',
+            'mobile-nav': '0 -10px 30px rgba(0, 0, 0, 0.6), 0 -1px 0 rgba(200, 159, 85, 0.3)',
           }
         }
       }
@@ -66,9 +69,22 @@
       font-family: "Font Awesome 6 Brands" !important;
     }
 
+    /* Mobile Viewport & Typography Baseline */
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
     body {
       font-size: 17px;
       line-height: 1.6;
+      padding-bottom: calc(76px + env(safe-area-inset-bottom, 16px));
+    }
+
+    @media (min-width: 640px) {
+      body {
+        padding-bottom: 0;
+      }
     }
 
     /* Custom Gold Selection */
@@ -79,8 +95,8 @@
     
     /* Custom Luxury Dark Scrollbar */
     ::-webkit-scrollbar {
-      width: 9px;
-      height: 9px;
+      width: 7px;
+      height: 7px;
     }
     ::-webkit-scrollbar-track {
       background: #081220;
@@ -94,6 +110,13 @@
       background: #c89f55;
     }
 
+    /* Mobile iOS input auto-zoom prevention (Must be >= 16px) */
+    input, select, textarea {
+      font-size: 17px !important;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
     /* WebKit Dark Autofill Overrides */
     input:-webkit-autofill,
     input:-webkit-autofill:hover, 
@@ -105,16 +128,13 @@
       transition: background-color 5000s ease-in-out 0s !important;
     }
 
-    /* Touch target optimizations */
-    input, select, textarea, button, a {
-      touch-action: manipulation;
+    /* Fast Touch & Tap Highlight Removal */
+    * {
+      -webkit-tap-highlight-color: transparent;
     }
 
-    /* Mobile iOS input auto-zoom prevention */
-    @media (max-width: 640px) {
-      input, select, textarea {
-        font-size: 17px !important;
-      }
+    button, a, input, select, textarea {
+      touch-action: manipulation;
     }
 
     /* 3D Perspective Flip Card */
@@ -122,7 +142,7 @@
       perspective: 1200px;
     }
     .card-3d-inner {
-      transition: transform 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+      transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
       transform-style: preserve-3d;
     }
     .card-3d-inner.flipped {
@@ -138,10 +158,10 @@
 
     /* Precise Navy Background Grid */
     .bg-grid-pattern {
-      background-size: 32px 32px;
+      background-size: 28px 28px;
       background-image: 
-        linear-gradient(to right, rgba(200, 159, 85, 0.045) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(200, 159, 85, 0.045) 1px, transparent 1px);
+        linear-gradient(to right, rgba(200, 159, 85, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(200, 159, 85, 0.04) 1px, transparent 1px);
     }
 
     /* Metallic Gold Gradient Text */
@@ -153,7 +173,7 @@
 
     /* High-Fidelity Glassmorphism Panel */
     .glass-panel {
-      background: rgba(17, 34, 59, 0.88);
+      background: rgba(17, 34, 59, 0.9);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(200, 159, 85, 0.25);
@@ -162,67 +182,75 @@
 
     /* Transparent Crest Ambient Glow */
     .logo-gold-glow {
-      filter: drop-shadow(0 4px 22px rgba(200, 159, 85, 0.35));
+      filter: drop-shadow(0 4px 18px rgba(200, 159, 85, 0.35));
     }
 
     /* Pulse highlight on selected service */
     @keyframes highlightPulse {
-      0% { box-shadow: 0 0 0 0 rgba(200, 159, 85, 0.7); }
-      70% { box-shadow: 0 0 0 12px rgba(200, 159, 85, 0); }
+      0% { box-shadow: 0 0 0 0 rgba(200, 159, 85, 0.8); }
+      70% { box-shadow: 0 0 0 14px rgba(200, 159, 85, 0); }
       100% { box-shadow: 0 0 0 0 rgba(200, 159, 85, 0); }
     }
     .pulse-highlight {
       animation: highlightPulse 1.2s ease-out 2;
     }
+
+    /* Safe-Area Bottom Padding for Mobile Thumb Bar */
+    .safe-area-bottom {
+      padding-bottom: max(10px, env(safe-area-inset-bottom));
+    }
   </style>
 </head>
-<body class="bg-brand-navy text-slate-200 antialiased selection:bg-brand-gold selection:text-brand-navy min-h-screen flex flex-col justify-between pb-20 sm:pb-0">
+<body class="bg-brand-navy text-slate-200 antialiased selection:bg-brand-gold selection:text-brand-navy min-h-screen flex flex-col justify-between">
 
   <!-- Accessible Skip Link -->
   <a href="#orderSection" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-gold focus:text-brand-navy focus:font-bold focus:rounded-lg">
     Skip to Order Form
   </a>
 
-  <!-- Toast Notification Feedback Banner -->
-  <div id="toastNotification" role="alert" aria-live="polite" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-brand-navyDark border border-brand-gold text-brand-white px-6 py-3 rounded-xl shadow-gold-glow text-sm font-semibold tracking-wider uppercase opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-4">
+  <!-- Mobile Toast Notification Banner -->
+  <div id="toastNotification" role="alert" aria-live="polite" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-brand-navyDark/95 backdrop-blur-xl border border-brand-gold text-brand-white px-5 py-3 rounded-2xl shadow-gold-glow text-sm font-bold tracking-wider uppercase opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-4 max-w-[90vw] text-center">
     <span id="toastMsg">Notification</span>
   </div>
 
-  <!-- SINGLE UNIFIED CLEAN HEADER -->
+  <!-- SINGLE UNIFIED CLEAN HEADER (Mobile Optimized) -->
   <header class="border-b border-brand-navyBorder bg-brand-navyDark/95 backdrop-blur-2xl sticky top-0 z-40">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-20 sm:h-24 flex items-center justify-between">
+    <div class="max-w-5xl mx-auto px-3.5 sm:px-6 h-18 sm:h-24 flex items-center justify-between py-2 sm:py-0">
       
       <!-- Official Brand Logo & Identity -->
-      <a href="#" aria-label="M.K. Printers & Stationers Home" class="flex items-center gap-3 sm:gap-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-lg p-1">
-        <div class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center shrink-0">
+      <a href="#" aria-label="M.K. Printers & Stationers Home" class="flex items-center gap-2.5 sm:gap-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-lg p-1">
+        <div class="w-11 h-11 sm:w-14 sm:h-14 flex items-center justify-center shrink-0">
           <img src="logo.png" alt="M.K. Printers Official Gold Crest Logo" class="w-full h-full object-contain logo-gold-glow" width="56" height="56" />
         </div>
         <div>
-          <div class="font-bold text-base sm:text-xl tracking-wider text-brand-white">
-            M.K. <span class="text-sm sm:text-base uppercase tracking-widest text-slate-300 font-semibold">Printers</span>
+          <div class="font-bold text-base sm:text-xl tracking-wider text-brand-white leading-tight">
+            M.K. <span class="text-xs sm:text-base uppercase tracking-widest text-slate-300 font-semibold">Printers</span>
           </div>
-          <p class="text-xs sm:text-sm uppercase tracking-[0.2em] text-brand-gold font-semibold">&amp; Stationers</p>
+          <p class="text-[11px] sm:text-sm uppercase tracking-[0.18em] text-brand-gold font-semibold leading-tight">&amp; Stationers</p>
         </div>
       </a>
 
-      <!-- Clean Header Action Buttons -->
+      <!-- Header Action Buttons -->
       <nav aria-label="Main Navigation" class="flex items-center gap-2 sm:gap-3.5">
         
         <!-- Direct Phone Link -->
-        <a href="tel:+919336621866" class="px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-brand-navyCard hover:bg-brand-navyBorder border border-brand-gold/40 text-brand-white text-sm sm:text-base font-bold tracking-wide uppercase transition flex items-center gap-2 active:scale-95 focus-visible:ring-2 focus-visible:ring-brand-gold">
+        <a href="tel:+919336621866" aria-label="Call +91 93366 21866" class="px-3 py-2 sm:px-4 sm:py-3 rounded-xl bg-brand-navyCard hover:bg-brand-navyBorder border border-brand-gold/40 text-brand-white text-xs sm:text-base font-bold tracking-wide uppercase transition flex items-center gap-1.5 sm:gap-2 active:scale-95 focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[44px]">
           <i class="fa-solid fa-phone text-brand-gold text-sm" aria-hidden="true"></i>
           <span class="hidden sm:inline">+91 93366 21866</span>
+          <span class="sm:hidden text-xs">Call</span>
         </a>
 
         <!-- WhatsApp Quick Link -->
-        <a href="https://wa.me/919336621866?text=Hello%20M.K.%20Printers,%20I%20have%20an%20inquiry." target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-brand-navyCard hover:bg-brand-navyBorder border border-brand-gold/30 text-brand-gold text-sm sm:text-base font-bold tracking-wide uppercase transition flex items-center gap-2 active:scale-95 focus-visible:ring-2 focus-visible:ring-brand-gold">
-          <i class="fa-brands fa-whatsapp text-base" aria-hidden="true"></i>
+        <a href="https://wa.me/919336621866?text=Hello%20M.K.%20Printers,%20I%20have%20an%20inquiry." target="_blank" rel="noopener noreferrer" aria-label="Message on WhatsApp" class="px-3 py-2 sm:px-4 sm:py-3 rounded-xl bg-brand-navyCard hover:bg-brand-navyBorder border border-brand-gold/30 text-brand-gold text-xs sm:text-base font-bold tracking-wide uppercase transition flex items-center gap-1.5 sm:gap-2 active:scale-95 focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[44px]">
+          <i class="fa-brands fa-whatsapp text-sm sm:text-base" aria-hidden="true"></i>
           <span class="hidden md:inline">WhatsApp</span>
+          <span class="md:hidden text-xs">Chat</span>
         </a>
 
         <!-- Place Order Button -->
-        <a href="#orderSection" class="px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-brand-gold hover:bg-brand-goldLight text-brand-navy font-bold text-sm sm:text-base tracking-wide uppercase transition shadow-gold-glow flex items-center gap-2 active:scale-95 focus-visible:ring-2 focus-visible:ring-brand-white">
-          <i class="fa-solid fa-paper-plane text-sm" aria-hidden="true"></i> Place Order
+        <a href="#orderSection" class="px-3.5 py-2 sm:px-5 sm:py-3 rounded-xl bg-brand-gold hover:bg-brand-goldLight text-brand-navy font-bold text-xs sm:text-base tracking-wide uppercase transition shadow-gold-glow flex items-center gap-1.5 sm:gap-2 active:scale-95 focus-visible:ring-2 focus-visible:ring-brand-white min-h-[44px]">
+          <i class="fa-solid fa-paper-plane text-xs sm:text-sm" aria-hidden="true"></i>
+          <span>Order</span>
         </a>
 
       </nav>
@@ -231,60 +259,60 @@
   </header>
 
   <!-- MAIN PORTAL BODY -->
-  <main class="bg-grid-pattern py-10 sm:py-16 flex-grow">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16">
+  <main class="bg-grid-pattern py-6 sm:py-16 flex-grow">
+    <div class="max-w-5xl mx-auto px-3.5 sm:px-6 space-y-8 sm:space-y-16">
       
       <!-- HERO BRAND SPOTLIGHT -->
-      <section aria-labelledby="heroHeading" class="text-center max-w-3xl mx-auto space-y-5">
+      <section aria-labelledby="heroHeading" class="text-center max-w-3xl mx-auto space-y-4 sm:space-y-5 pt-2 sm:pt-0">
         
-        <!-- Large Transparent Center Crest -->
-        <div class="w-28 h-28 sm:w-36 sm:h-36 mx-auto flex items-center justify-center">
+        <!-- Transparent Center Crest with Touch Ripple -->
+        <div class="w-24 h-24 sm:w-36 sm:h-36 mx-auto flex items-center justify-center">
           <img src="logo.png" alt="M.K. Printers Master Emblem" class="w-full h-full object-contain logo-gold-glow" width="144" height="144" />
         </div>
 
         <!-- Official Authorization Tag -->
-        <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-gold/10 border border-brand-gold/40 text-xs sm:text-sm font-bold uppercase tracking-widest text-brand-goldLight">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 sm:px-5 sm:py-2 rounded-full bg-brand-gold/10 border border-brand-gold/40 text-[11px] sm:text-sm font-bold uppercase tracking-wider sm:tracking-widest text-brand-goldLight">
           <span class="w-2 h-2 rounded-full bg-brand-gold shrink-0"></span>
           <span>Government Order Supplier &bull; Sitapur (U.P.)</span>
         </div>
 
         <!-- Main Business Title -->
-        <h1 id="heroHeading" class="font-black text-3xl sm:text-5xl lg:text-6xl text-brand-white tracking-tight leading-tight">
+        <h1 id="heroHeading" class="font-black text-2xl sm:text-5xl lg:text-6xl text-brand-white tracking-tight leading-tight px-1">
           M.K. PRINTERS &amp; <span class="text-gold-gradient">STATIONERS</span>
         </h1>
 
         <!-- Scope Subtitle -->
-        <p class="text-slate-200 text-sm sm:text-lg lg:text-xl uppercase tracking-wider font-semibold px-2">
+        <p class="text-slate-200 text-xs sm:text-lg lg:text-xl uppercase tracking-wider font-semibold px-2">
           All Kind of Printing Works &bull; Government &amp; Commercial Solutions
         </p>
 
-        <!-- Official Landmark Address Bar with 1-Click Copy -->
-        <div class="flex flex-wrap items-center justify-center gap-2.5 pt-2">
-          <span class="text-center text-xs sm:text-sm md:text-base text-slate-300 max-w-2xl font-medium">
+        <!-- Official Landmark Address Bar with 1-Tap Copy (Mobile Friendly) -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-2.5 pt-1">
+          <span class="text-center text-xs sm:text-sm md:text-base text-slate-300 max-w-2xl font-medium leading-snug">
             Near Police Chowki, Holi Nagar, Station Road, Thompsonganj, Sitapur, Uttar Pradesh - 261001
           </span>
-          <button type="button" id="btnCopyAddress" aria-label="Copy Address to Clipboard" class="px-3 py-1.5 rounded bg-brand-navyCard border border-brand-gold/40 hover:border-brand-gold text-brand-gold text-xs sm:text-sm font-bold uppercase tracking-wider transition active:scale-95 flex items-center gap-1.5 focus-visible:ring-2 focus-visible:ring-brand-gold">
-            <i class="fa-regular fa-copy" aria-hidden="true"></i> Copy
+          <button type="button" id="btnCopyAddress" aria-label="Copy Address to Clipboard" class="px-3.5 py-2 rounded-lg bg-brand-navyCard border border-brand-gold/40 hover:border-brand-gold text-brand-gold text-xs sm:text-sm font-bold uppercase tracking-wider transition active:scale-95 flex items-center gap-1.5 focus-visible:ring-2 focus-visible:ring-brand-gold shrink-0 min-h-[40px]">
+            <i class="fa-regular fa-copy" aria-hidden="true"></i> Copy Address
           </button>
         </div>
 
       </section>
 
-      <!-- INTERACTIVE 3D DIGITAL IDENTITY CARD (WITH EMBEDDED LIVE QR) -->
-      <section aria-labelledby="cardHeading" class="space-y-4">
+      <!-- INTERACTIVE 3D DIGITAL IDENTITY CARD (Mobile Touch Flip) -->
+      <section aria-labelledby="cardHeading" class="space-y-3 sm:space-y-4">
         
         <div class="text-center space-y-1">
           <h2 id="cardHeading" class="text-xs sm:text-sm uppercase tracking-widest text-brand-gold font-bold">Interactive Identity Card</h2>
           <p class="text-xs sm:text-sm text-slate-300 uppercase tracking-wide">Tap card below to inspect front &amp; back (Includes live scannable QR)</p>
         </div>
 
-        <div class="card-3d-wrap max-w-xl mx-auto min-h-[240px] sm:min-h-[320px] flex items-center justify-center">
-          <div id="simpleCard" tabindex="0" role="button" aria-label="Click to flip digital business card" class="card-3d-inner relative w-full aspect-[1.75/1] rounded-2xl shadow-card-3d cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold">
+        <div class="card-3d-wrap max-w-xl mx-auto min-h-[220px] sm:min-h-[320px] flex items-center justify-center">
+          <div id="simpleCard" tabindex="0" role="button" aria-label="Tap to flip digital business card" class="card-3d-inner relative w-full aspect-[1.75/1] rounded-2xl shadow-card-3d cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold select-none">
             
             <!-- FRONT FACE -->
-            <div class="card-face absolute inset-0 rounded-2xl bg-[#0c192c] border border-brand-gold/40 p-5 sm:p-8 flex flex-col justify-between overflow-hidden shadow-2xl">
+            <div class="card-face absolute inset-0 rounded-2xl bg-[#0c192c] border border-brand-gold/40 p-4 sm:p-8 flex flex-col justify-between overflow-hidden shadow-2xl">
               <div class="flex items-center justify-between z-10">
-                <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+                <div class="w-9 h-9 sm:w-12 sm:h-12 flex items-center justify-center">
                   <img src="logo.png" alt="MK Crest" class="w-full h-full object-contain logo-gold-glow" width="48" height="48" />
                 </div>
                 <div class="flex gap-1.5" aria-hidden="true">
@@ -295,66 +323,66 @@
               </div>
 
               <div class="text-center z-10 my-auto">
-                <div class="font-extrabold text-lg sm:text-2xl md:text-3xl text-brand-white tracking-wider sm:tracking-widest uppercase">
+                <div class="font-extrabold text-base sm:text-2xl md:text-3xl text-brand-white tracking-wider sm:tracking-widest uppercase">
                   M.K. PRINTERS &amp; STATIONERS
                 </div>
-                <div class="h-[1px] w-24 sm:w-36 bg-gradient-to-r from-transparent via-brand-gold to-transparent mx-auto my-2"></div>
-                <div class="text-[10px] sm:text-xs md:text-sm font-bold text-brand-gold tracking-[0.2em] uppercase">
+                <div class="h-[1px] w-20 sm:w-36 bg-gradient-to-r from-transparent via-brand-gold to-transparent mx-auto my-1.5 sm:my-2"></div>
+                <div class="text-[9px] sm:text-xs md:text-sm font-bold text-brand-gold tracking-[0.18em] sm:tracking-[0.2em] uppercase">
                   ALL KIND OF PRINTING WORKS
                 </div>
               </div>
 
-              <div class="flex items-center justify-between z-10 text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-widest text-slate-300">
-                <span class="px-2 py-0.5 rounded bg-brand-gold/15 border border-brand-gold/40 text-brand-gold font-bold">
+              <div class="flex items-center justify-between z-10 text-[9px] sm:text-xs uppercase tracking-wider text-slate-300">
+                <span class="px-1.5 py-0.5 sm:px-2 rounded bg-brand-gold/15 border border-brand-gold/40 text-brand-gold font-bold">
                   Govt. Supplier
                 </span>
                 <span class="text-brand-white font-semibold">Sitapur (U.P.)</span>
               </div>
             </div>
 
-            <!-- BACK FACE (WITH SCANNABLE QR CODE & EXACT LAYOUT) -->
-            <div class="card-face card-back-face absolute inset-0 rounded-2xl bg-[#081220] border border-brand-gold/40 p-4 sm:p-6 flex flex-col justify-between overflow-hidden shadow-2xl">
+            <!-- BACK FACE (WITH LIVE SCANNABLE QR CODE & TAP TRIGGER) -->
+            <div class="card-face card-back-face absolute inset-0 rounded-2xl bg-[#081220] border border-brand-gold/40 p-3.5 sm:p-6 flex flex-col justify-between overflow-hidden shadow-2xl">
               
-              <div class="flex items-center justify-between z-10 border-b border-brand-gold/20 pb-1.5">
+              <div class="flex items-center justify-between z-10 border-b border-brand-gold/20 pb-1 sm:pb-1.5">
                 <div>
-                  <div class="font-bold text-xs sm:text-base text-brand-gold tracking-wider uppercase">M.K. PRINTERS &amp; STATIONERS</div>
-                  <div class="text-[9px] sm:text-xs text-slate-300 uppercase tracking-wider">Government Order Supplier</div>
+                  <div class="font-bold text-[11px] sm:text-base text-brand-gold tracking-wider uppercase leading-tight">M.K. PRINTERS &amp; STATIONERS</div>
+                  <div class="text-[8px] sm:text-xs text-slate-300 uppercase tracking-wider">Government Order Supplier</div>
                 </div>
-                <span class="text-[9px] sm:text-xs font-bold text-brand-gold px-2 py-0.5 rounded bg-brand-gold/10 border border-brand-gold/30">Verified</span>
+                <span class="text-[8px] sm:text-xs font-bold text-brand-gold px-1.5 py-0.5 rounded bg-brand-gold/10 border border-brand-gold/30">Verified</span>
               </div>
 
               <!-- Content Row with QR Code and Contact Credentials -->
-              <div class="flex items-center gap-3.5 sm:gap-5 z-10 my-auto">
+              <div class="flex items-center gap-2.5 sm:gap-5 z-10 my-auto">
                 
                 <!-- Scannable QR Code Frame -->
                 <div class="shrink-0 flex flex-col items-center">
-                  <div class="w-16 h-16 sm:w-24 sm:h-24 p-1 rounded-lg bg-white border border-brand-gold shadow-md">
+                  <div class="w-14 h-14 sm:w-24 sm:h-24 p-0.5 sm:p-1 rounded-lg bg-white border border-brand-gold shadow-md">
                     <img src="mk_printers_qr.png" alt="Scan to visit portal" class="w-full h-full object-contain" width="96" height="96" />
                   </div>
-                  <span class="text-[8px] sm:text-[10px] text-brand-gold uppercase tracking-wider font-bold mt-1">Scan QR</span>
+                  <span class="text-[7px] sm:text-[10px] text-brand-gold uppercase tracking-wider font-bold mt-0.5 sm:mt-1">Scan QR</span>
                 </div>
 
                 <!-- Contact Details -->
-                <div class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm flex-grow">
-                  <div class="flex items-center gap-2 text-slate-200">
-                    <i class="fa-solid fa-phone text-brand-gold text-xs shrink-0" aria-hidden="true"></i>
-                    <span class="font-bold text-brand-white tracking-wide text-xs sm:text-sm">+91 93366 21866</span>
+                <div class="space-y-1 sm:space-y-2 text-[11px] sm:text-sm flex-grow">
+                  <div class="flex items-center gap-1.5 sm:gap-2 text-slate-200">
+                    <i class="fa-solid fa-phone text-brand-gold text-[10px] sm:text-xs shrink-0" aria-hidden="true"></i>
+                    <span class="font-bold text-brand-white tracking-wide text-[11px] sm:text-sm">+91 93366 21866</span>
                   </div>
 
-                  <div class="flex items-center gap-2 text-slate-200">
-                    <i class="fa-solid fa-envelope text-brand-gold text-xs shrink-0" aria-hidden="true"></i>
-                    <span class="font-medium text-slate-200 text-xs sm:text-sm truncate">abhinay368@gmail.com</span>
+                  <div class="flex items-center gap-1.5 sm:gap-2 text-slate-200">
+                    <i class="fa-solid fa-envelope text-brand-gold text-[10px] sm:text-xs shrink-0" aria-hidden="true"></i>
+                    <span class="font-medium text-slate-200 text-[10px] sm:text-sm truncate">abhinay368@gmail.com</span>
                   </div>
 
-                  <div class="flex items-start gap-2 text-slate-200">
-                    <i class="fa-solid fa-location-dot text-brand-gold text-xs shrink-0 mt-0.5" aria-hidden="true"></i>
-                    <span class="font-medium text-slate-200 text-[10px] sm:text-xs leading-tight">Near Police Chowki, Thompsonganj, Sitapur - 261001</span>
+                  <div class="flex items-start gap-1.5 sm:gap-2 text-slate-200">
+                    <i class="fa-solid fa-location-dot text-brand-gold text-[10px] sm:text-xs shrink-0 mt-0.5" aria-hidden="true"></i>
+                    <span class="font-medium text-slate-200 text-[9px] sm:text-xs leading-tight">Near Police Chowki, Thompsonganj, Sitapur - 261001</span>
                   </div>
                 </div>
 
               </div>
 
-              <div class="flex items-center justify-between z-10 text-[8px] sm:text-[10px] uppercase text-slate-400 border-t border-brand-navyBorder pt-1">
+              <div class="flex items-center justify-between z-10 text-[7px] sm:text-[10px] uppercase text-slate-400 border-t border-brand-navyBorder pt-1">
                 <span>3.5" x 2.0" Standard</span>
                 <span class="text-brand-gold font-semibold">Sitapur, Uttar Pradesh</span>
               </div>
@@ -367,109 +395,109 @@
       </section>
 
       <!-- OFFICIAL PRODUCTS & SERVICES (13 CATALOG ITEMS) -->
-      <section id="servicesSection" aria-labelledby="servicesHeading" class="glass-panel rounded-2xl p-6 sm:p-10 space-y-6">
+      <section id="servicesSection" aria-labelledby="servicesHeading" class="glass-panel rounded-2xl p-4 sm:p-10 space-y-5 sm:space-y-6">
         
-        <div class="flex items-center justify-between border-b border-brand-navyBorder pb-4">
+        <div class="flex items-center justify-between border-b border-brand-navyBorder pb-3 sm:pb-4">
           <div>
-            <h2 id="servicesHeading" class="font-bold text-lg sm:text-xl md:text-2xl text-brand-white uppercase tracking-wider">
+            <h2 id="servicesHeading" class="font-bold text-base sm:text-xl md:text-2xl text-brand-white uppercase tracking-wider">
               M.K. Printers &amp; Stationers Provides
             </h2>
-            <p class="text-xs sm:text-sm text-slate-300 mt-1">Tap any service below to select and place order directly</p>
+            <p class="text-xs sm:text-sm text-slate-300 mt-0.5 sm:mt-1">Tap any service to auto-select and order</p>
           </div>
-          <div class="hidden sm:flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-brand-gold" aria-hidden="true"></span>
-            <span class="text-xs font-bold uppercase text-brand-gold tracking-widest">13 Services</span>
+          <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            <span class="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-brand-gold" aria-hidden="true"></span>
+            <span class="text-[11px] sm:text-xs font-bold uppercase text-brand-gold tracking-wider">13 Items</span>
           </div>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-4">
           
-          <button type="button" data-service="Visiting cards and business cards" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
-            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+          <button type="button" data-service="Visiting cards and business cards" class="service-pick-card text-left p-3.5 sm:p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-[0.98] flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[52px]">
+            <div class="w-6 h-6 rounded-lg bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
               <i class="fa-solid fa-check"></i>
             </div>
             <span class="text-brand-white">Visiting cards and business cards</span>
           </button>
 
-          <button type="button" data-service="Letterheads and envelopes" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
-            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+          <button type="button" data-service="Letterheads and envelopes" class="service-pick-card text-left p-3.5 sm:p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-[0.98] flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[52px]">
+            <div class="w-6 h-6 rounded-lg bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
               <i class="fa-solid fa-check"></i>
             </div>
             <span class="text-brand-white">Letterheads and envelopes</span>
           </button>
 
-          <button type="button" data-service="Bill books and receipt books" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
-            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+          <button type="button" data-service="Bill books and receipt books" class="service-pick-card text-left p-3.5 sm:p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-[0.98] flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[52px]">
+            <div class="w-6 h-6 rounded-lg bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
               <i class="fa-solid fa-check"></i>
             </div>
             <span class="text-brand-white">Bill books and receipt books</span>
           </button>
 
-          <button type="button" data-service="Pamphlets, flyers and brochures" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
-            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+          <button type="button" data-service="Pamphlets, flyers and brochures" class="service-pick-card text-left p-3.5 sm:p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-[0.98] flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[52px]">
+            <div class="w-6 h-6 rounded-lg bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
               <i class="fa-solid fa-check"></i>
             </div>
             <span class="text-brand-white">Pamphlets, flyers and brochures</span>
           </button>
 
-          <button type="button" data-service="Posters and banners" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
-            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+          <button type="button" data-service="Posters and banners" class="service-pick-card text-left p-3.5 sm:p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-[0.98] flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[52px]">
+            <div class="w-6 h-6 rounded-lg bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
               <i class="fa-solid fa-check"></i>
             </div>
             <span class="text-brand-white">Posters and banners</span>
           </button>
 
-          <button type="button" data-service="Wedding and invitation cards" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
-            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+          <button type="button" data-service="Wedding and invitation cards" class="service-pick-card text-left p-3.5 sm:p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-[0.98] flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[52px]">
+            <div class="w-6 h-6 rounded-lg bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
               <i class="fa-solid fa-check"></i>
             </div>
             <span class="text-brand-white">Wedding and invitation cards</span>
           </button>
 
-          <button type="button" data-service="School and office stationery" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
-            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+          <button type="button" data-service="School and office stationery" class="service-pick-card text-left p-3.5 sm:p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-[0.98] flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[52px]">
+            <div class="w-6 h-6 rounded-lg bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
               <i class="fa-solid fa-check"></i>
             </div>
             <span class="text-brand-white">School and office stationery</span>
           </button>
 
-          <button type="button" data-service="Registers and notebooks" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
-            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+          <button type="button" data-service="Registers and notebooks" class="service-pick-card text-left p-3.5 sm:p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-[0.98] flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[52px]">
+            <div class="w-6 h-6 rounded-lg bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
               <i class="fa-solid fa-check"></i>
             </div>
             <span class="text-brand-white">Registers and notebooks</span>
           </button>
 
-          <button type="button" data-service="Government and office printing work" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
-            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+          <button type="button" data-service="Government and office printing work" class="service-pick-card text-left p-3.5 sm:p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-[0.98] flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[52px]">
+            <div class="w-6 h-6 rounded-lg bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
               <i class="fa-solid fa-check"></i>
             </div>
             <span class="text-brand-white">Government and office printing work</span>
           </button>
 
-          <button type="button" data-service="Catalogue and booklet printing" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
-            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+          <button type="button" data-service="Catalogue and booklet printing" class="service-pick-card text-left p-3.5 sm:p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-[0.98] flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[52px]">
+            <div class="w-6 h-6 rounded-lg bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
               <i class="fa-solid fa-check"></i>
             </div>
             <span class="text-brand-white">Catalogue and booklet printing</span>
           </button>
 
-          <button type="button" data-service="Custom printing and graphic designing" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
-            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+          <button type="button" data-service="Custom printing and graphic designing" class="service-pick-card text-left p-3.5 sm:p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-[0.98] flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[52px]">
+            <div class="w-6 h-6 rounded-lg bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
               <i class="fa-solid fa-check"></i>
             </div>
             <span class="text-brand-white">Custom printing and graphic designing</span>
           </button>
 
-          <button type="button" data-service="Bulk commercial printing" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold">
-            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+          <button type="button" data-service="Bulk commercial printing" class="service-pick-card text-left p-3.5 sm:p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-[0.98] flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[52px]">
+            <div class="w-6 h-6 rounded-lg bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
               <i class="fa-solid fa-check"></i>
             </div>
             <span class="text-brand-white">Bulk commercial printing</span>
           </button>
 
-          <button type="button" data-service="General stationery supplies" class="service-pick-card text-left p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-98 flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 sm:col-span-2 lg:col-span-3 focus-visible:ring-2 focus-visible:ring-brand-gold">
-            <div class="w-6 h-6 rounded bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
+          <button type="button" data-service="General stationery supplies" class="service-pick-card text-left p-3.5 sm:p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder hover:border-brand-gold/60 cursor-pointer transition-all duration-200 active:scale-[0.98] flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-200 sm:col-span-2 lg:col-span-3 focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[52px]">
+            <div class="w-6 h-6 rounded-lg bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0" aria-hidden="true">
               <i class="fa-solid fa-check"></i>
             </div>
             <span class="text-brand-white">General stationery supplies</span>
@@ -479,53 +507,58 @@
 
       </section>
 
-      <!-- FAST DIRECT ORDER DESK -->
-      <section id="orderSection" aria-labelledby="orderHeading" class="glass-panel rounded-2xl p-6 sm:p-10 border-brand-gold/30 space-y-6">
+      <!-- FAST DIRECT ORDER DESK (Mobile Keyboard Optimized) -->
+      <section id="orderSection" aria-labelledby="orderHeading" class="glass-panel rounded-2xl p-4 sm:p-10 border-brand-gold/30 space-y-5 sm:space-y-6">
         
-        <div class="border-b border-brand-navyBorder pb-4">
-          <div class="text-xs uppercase tracking-widest text-brand-gold font-bold">Fast Dispatch Hub</div>
-          <h2 id="orderHeading" class="font-bold text-xl sm:text-2xl text-brand-white uppercase tracking-wider mt-1">
+        <div class="border-b border-brand-navyBorder pb-3 sm:pb-4">
+          <div class="text-[11px] sm:text-xs uppercase tracking-widest text-brand-gold font-bold">Fast Dispatch Hub</div>
+          <h2 id="orderHeading" class="font-bold text-lg sm:text-2xl text-brand-white uppercase tracking-wider mt-0.5 sm:mt-1">
             Direct Order &amp; Inquiry Desk
           </h2>
         </div>
 
         <form id="orderForm" class="space-y-4 sm:space-y-5" novalidate>
           
-          <div class="grid sm:grid-cols-2 gap-4 sm:gap-5">
+          <div class="grid sm:grid-cols-2 gap-3.5 sm:gap-5">
             <div>
               <label for="orderName" class="block text-xs sm:text-sm uppercase tracking-wider text-slate-200 mb-1.5 font-bold">Your Name / Department</label>
-              <input type="text" id="orderName" name="orderName" autocomplete="name" placeholder="Full Name or Department" class="w-full bg-brand-navyDark border border-brand-navyBorder rounded-xl px-4 py-3.5 text-base sm:text-sm text-brand-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition" />
+              <input type="text" id="orderName" name="orderName" autocomplete="name" placeholder="Full Name or Department" class="w-full bg-brand-navyDark border border-brand-navyBorder rounded-xl px-4 py-3.5 text-base sm:text-sm text-brand-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition min-h-[48px]" />
             </div>
 
             <div>
               <label for="orderPhone" class="block text-xs sm:text-sm uppercase tracking-wider text-slate-200 mb-1.5 font-bold">Phone Number</label>
-              <input type="tel" id="orderPhone" name="orderPhone" autocomplete="tel" placeholder="+91 XXXXX XXXXX" class="w-full bg-brand-navyDark border border-brand-navyBorder rounded-xl px-4 py-3.5 text-base sm:text-sm text-brand-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition" />
+              <input type="tel" id="orderPhone" name="orderPhone" autocomplete="tel" inputmode="tel" placeholder="+91 XXXXX XXXXX" class="w-full bg-brand-navyDark border border-brand-navyBorder rounded-xl px-4 py-3.5 text-base sm:text-sm text-brand-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition min-h-[48px]" />
             </div>
           </div>
 
-          <div class="grid sm:grid-cols-2 gap-4 sm:gap-5">
+          <div class="grid sm:grid-cols-2 gap-3.5 sm:gap-5">
             <div>
               <label for="orderProduct" class="block text-xs sm:text-sm uppercase tracking-wider text-slate-200 mb-1.5 font-bold">Selected Service / Product</label>
-              <select id="orderProduct" name="orderProduct" class="w-full bg-brand-navyDark border border-brand-navyBorder rounded-xl px-4 py-3.5 text-base sm:text-sm text-brand-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition">
-                <option value="Visiting cards and business cards">Visiting cards and business cards</option>
-                <option value="Letterheads and envelopes">Letterheads and envelopes</option>
-                <option value="Bill books and receipt books">Bill books and receipt books</option>
-                <option value="Pamphlets, flyers and brochures">Pamphlets, flyers and brochures</option>
-                <option value="Posters and banners">Posters and banners</option>
-                <option value="Wedding and invitation cards">Wedding and invitation cards</option>
-                <option value="School and office stationery">School and office stationery</option>
-                <option value="Registers and notebooks">Registers and notebooks</option>
-                <option value="Government and office printing work">Government and office printing work</option>
-                <option value="Catalogue and booklet printing">Catalogue and booklet printing</option>
-                <option value="Custom printing and graphic designing">Custom printing and graphic designing</option>
-                <option value="Bulk commercial printing">Bulk commercial printing</option>
-                <option value="General stationery supplies">General stationery supplies</option>
-              </select>
+              <div class="relative">
+                <select id="orderProduct" name="orderProduct" class="w-full bg-brand-navyDark border border-brand-navyBorder rounded-xl px-4 py-3.5 text-base sm:text-sm text-brand-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition min-h-[48px] pr-10">
+                  <option value="Visiting cards and business cards">Visiting cards and business cards</option>
+                  <option value="Letterheads and envelopes">Letterheads and envelopes</option>
+                  <option value="Bill books and receipt books">Bill books and receipt books</option>
+                  <option value="Pamphlets, flyers and brochures">Pamphlets, flyers and brochures</option>
+                  <option value="Posters and banners">Posters and banners</option>
+                  <option value="Wedding and invitation cards">Wedding and invitation cards</option>
+                  <option value="School and office stationery">School and office stationery</option>
+                  <option value="Registers and notebooks">Registers and notebooks</option>
+                  <option value="Government and office printing work">Government and office printing work</option>
+                  <option value="Catalogue and booklet printing">Catalogue and booklet printing</option>
+                  <option value="Custom printing and graphic designing">Custom printing and graphic designing</option>
+                  <option value="Bulk commercial printing">Bulk commercial printing</option>
+                  <option value="General stationery supplies">General stationery supplies</option>
+                </select>
+                <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-brand-gold" aria-hidden="true">
+                  <i class="fa-solid fa-chevron-down text-xs"></i>
+                </div>
+              </div>
             </div>
 
             <div>
               <label for="orderQuantity" class="block text-xs sm:text-sm uppercase tracking-wider text-slate-200 mb-1.5 font-bold">Quantity / Scope</label>
-              <input type="text" id="orderQuantity" name="orderQuantity" placeholder="e.g. 1000 Pcs / 10 Books" class="w-full bg-brand-navyDark border border-brand-navyBorder rounded-xl px-4 py-3.5 text-base sm:text-sm text-brand-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition" />
+              <input type="text" id="orderQuantity" name="orderQuantity" placeholder="e.g. 1000 Pcs / 10 Books" class="w-full bg-brand-navyDark border border-brand-navyBorder rounded-xl px-4 py-3.5 text-base sm:text-sm text-brand-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition min-h-[48px]" />
             </div>
           </div>
 
@@ -534,16 +567,16 @@
             <textarea id="orderNotes" name="orderNotes" rows="3" placeholder="Paper GSM, binding, numbering details, or official department specifications..." class="w-full bg-brand-navyDark border border-brand-navyBorder rounded-xl px-4 py-3.5 text-base sm:text-sm text-brand-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition"></textarea>
           </div>
 
-          <!-- Dual Transmission Triggers -->
-          <div class="grid sm:grid-cols-2 gap-3.5 pt-2">
+          <!-- Dual Mobile Transmission Buttons -->
+          <div class="grid sm:grid-cols-2 gap-3 pt-1">
             
             <!-- WhatsApp Button -->
-            <button type="button" id="btnSendWhatsApp" class="w-full py-4 rounded-xl bg-brand-gold hover:bg-brand-goldLight active:scale-[0.98] text-brand-navy font-bold text-sm sm:text-base uppercase tracking-wider transition shadow-gold-glow flex items-center justify-center gap-2.5 focus-visible:ring-2 focus-visible:ring-brand-white">
+            <button type="button" id="btnSendWhatsApp" class="w-full py-4 px-4 rounded-xl bg-brand-gold hover:bg-brand-goldLight active:scale-[0.98] text-brand-navy font-bold text-sm sm:text-base uppercase tracking-wider transition shadow-gold-glow flex items-center justify-center gap-2.5 focus-visible:ring-2 focus-visible:ring-brand-white min-h-[52px]">
               <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i> Order via WhatsApp Direct
             </button>
 
             <!-- Email Button -->
-            <button type="button" id="btnSendEmail" class="w-full py-4 rounded-xl bg-brand-navyDark hover:bg-brand-navyBorder active:scale-[0.98] border border-brand-gold/40 text-brand-white font-bold text-sm sm:text-base uppercase tracking-wider transition flex items-center justify-center gap-2.5 focus-visible:ring-2 focus-visible:ring-brand-gold">
+            <button type="button" id="btnSendEmail" class="w-full py-4 px-4 rounded-xl bg-brand-navyDark hover:bg-brand-navyBorder active:scale-[0.98] border border-brand-gold/40 text-brand-white font-bold text-sm sm:text-base uppercase tracking-wider transition flex items-center justify-center gap-2.5 focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[52px]">
               <i class="fa-solid fa-envelope text-brand-gold text-lg" aria-hidden="true"></i> Order via Direct Email
             </button>
 
@@ -553,32 +586,32 @@
 
       </section>
 
-      <!-- GEOGRAPHIC LOCATION & LIVE DIRECTIONS SECTION -->
-      <section id="mapSection" aria-labelledby="mapHeading" class="glass-panel rounded-2xl p-6 sm:p-10 border-brand-gold/30 space-y-5">
+      <!-- GEOGRAPHIC LOCATION & LIVE DIRECTIONS (Mobile Map App Links) -->
+      <section id="mapSection" aria-labelledby="mapHeading" class="glass-panel rounded-2xl p-4 sm:p-10 border-brand-gold/30 space-y-4 sm:space-y-5">
         
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-brand-navyBorder pb-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-brand-navyBorder pb-3 sm:pb-4">
           <div>
-            <div class="text-xs uppercase tracking-widest text-brand-gold font-bold">Exact Geographic Navigation</div>
-            <h2 id="mapHeading" class="font-bold text-xl sm:text-2xl text-brand-white uppercase tracking-wider mt-1">
+            <div class="text-[11px] sm:text-xs uppercase tracking-widest text-brand-gold font-bold">Exact Geographic Navigation</div>
+            <h2 id="mapHeading" class="font-bold text-lg sm:text-2xl text-brand-white uppercase tracking-wider mt-0.5 sm:mt-1">
               Workshop Location &amp; Directions
             </h2>
           </div>
-          <a href="https://www.google.com/maps/search/?api=1&query=Near+Police+Chowki,+Holi+Nagar,+Station+Road,+Thompsonganj,+Sitapur,+Uttar+Pradesh+261001" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-lg bg-brand-gold hover:bg-brand-goldLight text-brand-navy font-bold text-xs sm:text-sm uppercase tracking-wider transition flex items-center gap-2 self-start sm:self-auto active:scale-95 shadow-gold-glow focus-visible:ring-2 focus-visible:ring-brand-white">
+          <a href="https://www.google.com/maps/search/?api=1&query=Near+Police+Chowki,+Holi+Nagar,+Station+Road,+Thompsonganj,+Sitapur,+Uttar+Pradesh+261001" target="_blank" rel="noopener noreferrer" class="px-4 py-3 rounded-xl bg-brand-gold hover:bg-brand-goldLight text-brand-navy font-bold text-xs sm:text-sm uppercase tracking-wider transition flex items-center justify-center gap-2 active:scale-95 shadow-gold-glow focus-visible:ring-2 focus-visible:ring-brand-white min-h-[44px]">
             <i class="fa-solid fa-diamond-turn-right text-sm" aria-hidden="true"></i> Open Live Directions
           </a>
         </div>
 
         <!-- Landmark Description Bar -->
-        <div class="p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs sm:text-sm text-slate-300">
-          <div class="flex items-start sm:items-center gap-2.5">
+        <div class="p-3.5 sm:p-4 rounded-xl bg-brand-navyDark border border-brand-navyBorder flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs sm:text-sm text-slate-300">
+          <div class="flex items-start sm:items-center gap-2">
             <i class="fa-solid fa-location-pin text-brand-gold text-base shrink-0 mt-0.5 sm:mt-0" aria-hidden="true"></i>
             <span><strong>Exact Landmark:</strong> Near Police Chowki, Holi Nagar, Station Road, Thompsonganj, Sitapur (U.P.) - 261001</span>
           </div>
-          <span class="text-xs uppercase tracking-wider text-brand-goldLight font-bold shrink-0">Central Sitapur</span>
+          <span class="text-[11px] sm:text-xs uppercase tracking-wider text-brand-goldLight font-bold shrink-0 self-end sm:self-auto">Central Sitapur</span>
         </div>
 
         <!-- Embedded Interactive Google Map -->
-        <div class="relative w-full h-[300px] sm:h-[380px] rounded-xl overflow-hidden border border-brand-gold/30 shadow-2xl bg-brand-navyDark">
+        <div class="relative w-full h-[240px] sm:h-[380px] rounded-xl overflow-hidden border border-brand-gold/30 shadow-2xl bg-brand-navyDark">
           <iframe 
             title="M.K. Printers Exact Location Map"
             src="https://maps.google.com/maps?q=Holi+Nagar+Station+Road+Thompsonganj+Sitapur+Uttar+Pradesh+261001&t=&z=16&ie=UTF8&iwloc=&output=embed" 
@@ -591,44 +624,44 @@
 
       </section>
 
-      <!-- DIRECT CONTACT & SAVE CONTACT CHANNELS BAR -->
-      <section aria-labelledby="contactChannelsHeading" class="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
+      <!-- DIRECT CONTACT & SAVE CONTACT CHANNELS (Grid on Mobile) -->
+      <section aria-labelledby="contactChannelsHeading" class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-5">
         <h2 id="contactChannelsHeading" class="sr-only">Contact Channels</h2>
         
         <!-- Phone Desk -->
-        <a href="tel:+919336621866" class="glass-panel rounded-xl p-4 sm:p-5 text-center transition active:scale-95 group block focus-visible:ring-2 focus-visible:ring-brand-gold">
-          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-navyDark border border-brand-gold/30 flex items-center justify-center text-brand-gold text-base sm:text-lg mx-auto mb-2" aria-hidden="true">
+        <a href="tel:+919336621866" class="glass-panel rounded-xl p-3.5 sm:p-5 text-center transition active:scale-95 group block focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[90px]">
+          <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-lg bg-brand-navyDark border border-brand-gold/30 flex items-center justify-center text-brand-gold text-sm sm:text-lg mx-auto mb-1.5 sm:mb-2" aria-hidden="true">
             <i class="fa-solid fa-phone"></i>
           </div>
-          <div class="text-[10px] sm:text-xs uppercase tracking-widest text-slate-400 font-bold">Call Desk</div>
-          <div class="font-bold text-sm sm:text-base text-brand-white mt-1">+91 93366 21866</div>
+          <div class="text-[9px] sm:text-xs uppercase tracking-widest text-slate-400 font-bold">Call Desk</div>
+          <div class="font-bold text-xs sm:text-base text-brand-white mt-0.5 sm:mt-1">+91 93366 21866</div>
         </a>
 
         <!-- WhatsApp -->
-        <a href="https://wa.me/919336621866?text=Hello%20M.K.%20Printers,%20I%20have%20an%20inquiry." target="_blank" rel="noopener noreferrer" class="glass-panel rounded-xl p-4 sm:p-5 text-center transition active:scale-95 group block border-brand-gold/40 focus-visible:ring-2 focus-visible:ring-brand-gold">
-          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-navyDark border border-brand-gold/30 flex items-center justify-center text-brand-gold text-base sm:text-lg mx-auto mb-2" aria-hidden="true">
+        <a href="https://wa.me/919336621866?text=Hello%20M.K.%20Printers,%20I%20have%20an%20inquiry." target="_blank" rel="noopener noreferrer" class="glass-panel rounded-xl p-3.5 sm:p-5 text-center transition active:scale-95 group block border-brand-gold/40 focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[90px]">
+          <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-lg bg-brand-navyDark border border-brand-gold/30 flex items-center justify-center text-brand-gold text-sm sm:text-lg mx-auto mb-1.5 sm:mb-2" aria-hidden="true">
             <i class="fa-brands fa-whatsapp"></i>
           </div>
-          <div class="text-[10px] sm:text-xs uppercase tracking-widest text-brand-goldLight font-bold">WhatsApp</div>
-          <div class="font-bold text-sm sm:text-base text-brand-white mt-1">+91 93366 21866</div>
+          <div class="text-[9px] sm:text-xs uppercase tracking-widest text-brand-goldLight font-bold">WhatsApp</div>
+          <div class="font-bold text-xs sm:text-base text-brand-white mt-0.5 sm:mt-1">+91 93366 21866</div>
         </a>
 
         <!-- Email -->
-        <a href="mailto:abhinay368@gmail.com" class="glass-panel rounded-xl p-4 sm:p-5 text-center transition active:scale-95 group block focus-visible:ring-2 focus-visible:ring-brand-gold">
-          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-navyDark border border-brand-gold/30 flex items-center justify-center text-brand-gold text-base sm:text-lg mx-auto mb-2" aria-hidden="true">
+        <a href="mailto:abhinay368@gmail.com" class="glass-panel rounded-xl p-3.5 sm:p-5 text-center transition active:scale-95 group block focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[90px]">
+          <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-lg bg-brand-navyDark border border-brand-gold/30 flex items-center justify-center text-brand-gold text-sm sm:text-lg mx-auto mb-1.5 sm:mb-2" aria-hidden="true">
             <i class="fa-solid fa-envelope"></i>
           </div>
-          <div class="text-[10px] sm:text-xs uppercase tracking-widest text-slate-400 font-bold">Email Desk</div>
-          <div class="font-bold text-xs sm:text-sm text-brand-white mt-1 truncate">abhinay368@gmail.com</div>
+          <div class="text-[9px] sm:text-xs uppercase tracking-widest text-slate-400 font-bold">Email Desk</div>
+          <div class="font-bold text-[11px] sm:text-sm text-brand-white mt-0.5 sm:mt-1 truncate">abhinay368@gmail.com</div>
         </a>
 
         <!-- Save Contact Card -->
-        <a href="MK_Printers_Contact.vcf" download="MK_Printers_Contact.vcf" class="glass-panel rounded-xl p-4 sm:p-5 text-center transition active:scale-95 group block border-brand-gold/30 hover:border-brand-gold focus-visible:ring-2 focus-visible:ring-brand-gold">
-          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brand-navyDark border border-brand-gold/30 flex items-center justify-center text-brand-gold text-base sm:text-lg mx-auto mb-2" aria-hidden="true">
+        <a href="MK_Printers_Contact.vcf" download="MK_Printers_Contact.vcf" class="glass-panel rounded-xl p-3.5 sm:p-5 text-center transition active:scale-95 group block border-brand-gold/30 hover:border-brand-gold focus-visible:ring-2 focus-visible:ring-brand-gold min-h-[90px]">
+          <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-lg bg-brand-navyDark border border-brand-gold/30 flex items-center justify-center text-brand-gold text-sm sm:text-lg mx-auto mb-1.5 sm:mb-2" aria-hidden="true">
             <i class="fa-solid fa-address-book"></i>
           </div>
-          <div class="text-[10px] sm:text-xs uppercase tracking-widest text-brand-gold font-bold">Save Contact</div>
-          <div class="font-bold text-xs sm:text-sm text-brand-white mt-1">Add to Phone</div>
+          <div class="text-[9px] sm:text-xs uppercase tracking-widest text-brand-gold font-bold">Save Contact</div>
+          <div class="font-bold text-[11px] sm:text-sm text-brand-white mt-0.5 sm:mt-1">Add to Phone</div>
         </a>
 
       </section>
@@ -637,34 +670,55 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="border-t border-brand-navyBorder bg-brand-navyDark py-8 text-sm text-slate-400">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-      <div class="flex items-center justify-center md:justify-start gap-3">
-        <div class="w-8 h-8 flex items-center justify-center shrink-0">
+  <footer class="border-t border-brand-navyBorder bg-brand-navyDark py-6 sm:py-8 text-xs sm:text-sm text-slate-400">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 text-center md:text-left">
+      <div class="flex items-center justify-center md:justify-start gap-2.5 sm:gap-3">
+        <div class="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center shrink-0">
           <img src="logo.png" alt="Logo" class="w-full h-full object-contain logo-gold-glow" width="32" height="32" />
         </div>
         <div>
-          <div class="font-bold text-brand-white uppercase tracking-wider text-sm sm:text-base">M.K. PRINTERS &amp; STATIONERS</div>
-          <div class="text-xs sm:text-sm text-slate-300">Near Police Chowki, Holi Nagar, Station Road, Thompsonganj, Sitapur, Uttar Pradesh, 261001</div>
+          <div class="font-bold text-brand-white uppercase tracking-wider text-xs sm:text-base">M.K. PRINTERS &amp; STATIONERS</div>
+          <div class="text-[11px] sm:text-sm text-slate-300">Near Police Chowki, Holi Nagar, Station Road, Thompsonganj, Sitapur (261001)</div>
         </div>
       </div>
-      <div class="text-xs sm:text-sm uppercase tracking-wider text-brand-gold font-bold shrink-0">
+      <div class="text-[11px] sm:text-sm uppercase tracking-wider text-brand-gold font-bold shrink-0">
         All Rights Reserved
       </div>
     </div>
   </footer>
 
-  <!-- STICKY BOTTOM ACTION BAR FOR MOBILE (Thumb Navigation) -->
-  <div class="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#081220]/95 backdrop-blur-lg border-t border-[#1d355a] p-3 flex items-center gap-2.5 shadow-2xl">
-    <a href="tel:+919336621866" class="flex-1 py-3.5 rounded-xl bg-brand-navyCard border border-brand-gold/40 text-brand-white text-sm font-bold tracking-wider uppercase text-center flex items-center justify-center gap-2 active:scale-95">
-      <i class="fa-solid fa-phone text-brand-gold text-sm" aria-hidden="true"></i> Call Now
-    </a>
-    <a href="https://wa.me/919336621866?text=Hello%20M.K.%20Printers,%20I%20want%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer" class="flex-1 py-3.5 rounded-xl bg-brand-gold text-brand-navy font-bold text-sm tracking-wider uppercase text-center flex items-center justify-center gap-2 shadow-gold-glow active:scale-95">
-      <i class="fa-brands fa-whatsapp text-base" aria-hidden="true"></i> WhatsApp
-    </a>
-  </div>
+  <!-- REFINED 4-BUTTON MOBILE STICKY THUMB NAVIGATION BAR -->
+  <nav aria-label="Mobile Quick Actions" class="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#081220]/95 backdrop-blur-xl border-t border-[#1d355a] px-3 pt-2 safe-area-bottom shadow-mobile-nav">
+    <div class="flex items-center justify-around gap-1.5 max-w-md mx-auto">
+      
+      <!-- Call -->
+      <a href="tel:+919336621866" class="flex-1 py-2 rounded-xl bg-brand-navyCard border border-brand-gold/30 text-slate-200 text-center flex flex-col items-center justify-center gap-0.5 active:scale-90 transition min-h-[50px]">
+        <i class="fa-solid fa-phone text-brand-gold text-sm" aria-hidden="true"></i>
+        <span class="text-[10px] uppercase font-bold tracking-wider">Call</span>
+      </a>
 
-  <!-- SCRIPTS -->
+      <!-- WhatsApp -->
+      <a href="https://wa.me/919336621866?text=Hello%20M.K.%20Printers,%20I%20want%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer" class="flex-1 py-2 rounded-xl bg-brand-gold text-brand-navy text-center flex flex-col items-center justify-center gap-0.5 active:scale-90 transition shadow-gold-glow min-h-[50px]">
+        <i class="fa-brands fa-whatsapp text-base" aria-hidden="true"></i>
+        <span class="text-[10px] uppercase font-bold tracking-wider">WhatsApp</span>
+      </a>
+
+      <!-- Directions -->
+      <a href="https://www.google.com/maps/search/?api=1&query=Near+Police+Chowki,+Holi+Nagar,+Station+Road,+Thompsonganj,+Sitapur,+Uttar+Pradesh+261001" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 rounded-xl bg-brand-navyCard border border-brand-gold/30 text-slate-200 text-center flex flex-col items-center justify-center gap-0.5 active:scale-90 transition min-h-[50px]">
+        <i class="fa-solid fa-location-dot text-brand-gold text-sm" aria-hidden="true"></i>
+        <span class="text-[10px] uppercase font-bold tracking-wider">Map</span>
+      </a>
+
+      <!-- Order Form -->
+      <a href="#orderSection" class="flex-1 py-2 rounded-xl bg-brand-navyCard border border-brand-gold/30 text-slate-200 text-center flex flex-col items-center justify-center gap-0.5 active:scale-90 transition min-h-[50px]">
+        <i class="fa-solid fa-paper-plane text-brand-gold text-sm" aria-hidden="true"></i>
+        <span class="text-[10px] uppercase font-bold tracking-wider">Order</span>
+      </a>
+
+    </div>
+  </nav>
+
+  <!-- SCRIPTS WITH MOBILE HAPTIC FEEDBACK & TOUCH HANDLING -->
   <script>
     // Register Service Worker for Chrome PWA Installation & Offline Support
     if ('serviceWorker' in navigator) {
@@ -676,6 +730,13 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+      // Haptic Vibration Helper for Android Mobile Devices
+      function triggerHaptic() {
+        if ('vibrate' in navigator) {
+          try { navigator.vibrate(15); } catch (e) {}
+        }
+      }
+
       // Toast notification system
       const toast = document.getElementById('toastNotification');
       const toastMsg = document.getElementById('toastMsg');
@@ -683,6 +744,7 @@
 
       function showToast(msg) {
         if (!toast || !toastMsg) return;
+        triggerHaptic();
         toastMsg.textContent = msg;
         toast.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
         toast.classList.add('opacity-100', 'translate-y-0');
@@ -706,10 +768,13 @@
         });
       }
 
-      // 3D Card Flip (Touch, Click & Enter Key)
+      // 3D Card Flip (Touch, Click & Keyboard)
       const card = document.getElementById('simpleCard');
       if (card) {
-        const toggleFlip = () => card.classList.toggle('flipped');
+        const toggleFlip = () => {
+          triggerHaptic();
+          card.classList.toggle('flipped');
+        };
         card.addEventListener('click', toggleFlip);
         card.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
@@ -719,7 +784,7 @@
         });
       }
 
-      // 1-Click Service Picking from List
+      // 1-Click Service Picking from List with Smooth Scroll
       const productDropdown = document.getElementById('orderProduct');
       const serviceCards = document.querySelectorAll('.service-pick-card');
 
@@ -727,13 +792,13 @@
         cardEl.addEventListener('click', () => {
           const serv = cardEl.getAttribute('data-service');
           if (serv && productDropdown) {
+            triggerHaptic();
             productDropdown.value = serv;
             showToast("Selected: " + serv);
             
             const orderSec = document.getElementById('orderSection');
             if (orderSec) {
-              orderSec.scrollIntoView({ behavior: 'smooth' });
-              // Highlight pulse animation on dropdown
+              orderSec.scrollIntoView({ behavior: 'smooth', block: 'center' });
               productDropdown.classList.add('pulse-highlight');
               setTimeout(() => {
                 productDropdown.classList.remove('pulse-highlight');
@@ -758,6 +823,7 @@
       const waBtn = document.getElementById('btnSendWhatsApp');
       if (waBtn) {
         waBtn.addEventListener('click', () => {
+          triggerHaptic();
           const { name, phone, product, quantity, notes } = getOrderPayload();
 
           const message = 
@@ -778,6 +844,7 @@
       const mailBtn = document.getElementById('btnSendEmail');
       if (mailBtn) {
         mailBtn.addEventListener('click', () => {
+          triggerHaptic();
           const { name, phone, product, quantity, notes } = getOrderPayload();
 
           const subject = `Order Inquiry: ${product} - ${name}`;
