@@ -1,4 +1,4 @@
-# M.K. PRINTERS & STATIONERS
+# M. K. OFFSET
 
 > **Government Order Supplier & Commercial Printing Press**  
 > *Sitapur (Uttar Pradesh) • All Kind of Printing Works*
@@ -17,9 +17,9 @@
 
 ## 🏢 Business Overview & Credentials
 
-**M.K. Printers & Stationers** is an authorized Government Order Supplier and commercial printing press located in Sitapur, Uttar Pradesh. The firm specializes in all forms of commercial, legal, government, and institutional print manufacturing.
+**M. K. Offset** is an authorized Government Order Supplier and commercial printing press located in Sitapur, Uttar Pradesh. The firm specializes in all forms of commercial, legal, government, and institutional print manufacturing.
 
-* **Business Entity:** `M.K. PRINTERS & STATIONERS`
+* **Business Entity:** `M. K. OFFSET`
 * **Official Authorization:** `GOVERNMENT ORDER SUPPLIER • Sitapur (U.P.)`
 * **Scope:** `ALL KIND OF PRINTING WORKS`
 * **Exact Landmark Address:**  
@@ -70,7 +70,7 @@ This web application is configured as a standalone **Progressive Web App (PWA)**
 ```text
 mk-printers/
 ├── .nojekyll                 # Bypasses Jekyll processing on GitHub Pages
-├── index.html                # Master responsive standalone portal
+├── index.html                # Master responsive standalone portal (M. K. Offset)
 ├── logo.png                  # Master transparent golden crest emblem
 ├── manifest.json             # PWA Web Manifest for Chrome installation
 ├── sw.js                     # Offline Service Worker script
