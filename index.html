@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>M. K. Offset | Sitapur (U.P.)</title>
   <meta name="description" content="M. K. Offset - Government Order Supplier & Commercial Printing Press in Sitapur (U.P.). Near Police Chowki, Holi Nagar, Station Road, Thompsonganj, Sitapur - 261001. Phone: +91 93366 21866." />
   <meta name="theme-color" content="#0c192c" />
@@ -10,7 +13,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
   <!-- PWA & Chrome App Manifest -->
-  <link rel="manifest" href="manifest.json" />
+  <link rel="manifest" href="manifest.json?v=3" />
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="apple-touch-icon" href="logo.png" />
 
@@ -720,10 +723,12 @@
 
   <!-- SCRIPTS WITH MOBILE HAPTIC FEEDBACK & TOUCH HANDLING -->
   <script>
-    // Register Service Worker for Chrome PWA Installation & Offline Support
+    // Automated Service Worker Update & Cache Purge
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js').catch((err) => {
+        navigator.serviceWorker.register('./sw.js').then((registration) => {
+          registration.update();
+        }).catch((err) => {
           console.log('SW registration note:', err);
         });
       });
