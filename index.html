@@ -658,6 +658,15 @@
 
   <!-- SCRIPTS -->
   <script>
+    // Register Service Worker for Chrome PWA Installation & Offline Support
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch((err) => {
+          console.log('SW registration note:', err);
+        });
+      });
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       // Toast notification system
       const toast = document.getElementById('toastNotification');
