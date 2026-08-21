@@ -13,7 +13,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
   <!-- PWA & Chrome App Manifest -->
-  <link rel="manifest" href="manifest.json?v=4" />
+  <link rel="manifest" href="manifest.json?v=5" />
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="apple-touch-icon" href="logo.png" />
 
@@ -301,57 +301,57 @@
 
       </section>
 
-      <!-- INTERACTIVE 3D DIGITAL IDENTITY CARD (WHITE BACKGROUND EDITION) -->
+      <!-- INTERACTIVE 3D DIGITAL IDENTITY CARD (SIGNATURE NAVY & GOLD EDITION) -->
       <section aria-labelledby="cardHeading" class="space-y-3 sm:space-y-4">
         
         <div class="text-center space-y-1">
-          <h2 id="cardHeading" class="text-xs sm:text-sm uppercase tracking-widest text-brand-gold font-bold">Interactive Identity Card (White Background Edition)</h2>
+          <h2 id="cardHeading" class="text-xs sm:text-sm uppercase tracking-widest text-brand-gold font-bold">Interactive Identity Card</h2>
           <p class="text-xs sm:text-sm text-slate-300 uppercase tracking-wide">Tap card below to inspect front &amp; back (Includes live scannable QR)</p>
         </div>
 
         <div class="card-3d-wrap max-w-xl mx-auto min-h-[220px] sm:min-h-[320px] flex items-center justify-center">
-          <div id="simpleCard" tabindex="0" role="button" aria-label="Tap to flip digital business card" class="card-3d-inner relative w-full aspect-[1.75/1] rounded-2xl shadow-2xl cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold select-none">
+          <div id="simpleCard" tabindex="0" role="button" aria-label="Tap to flip digital business card" class="card-3d-inner relative w-full aspect-[1.75/1] rounded-2xl shadow-card-3d cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold select-none">
             
-            <!-- FRONT FACE (CLEAN WHITE) -->
-            <div class="card-face absolute inset-0 rounded-2xl bg-white border-2 border-brand-gold/50 p-4 sm:p-8 flex flex-col justify-between overflow-hidden shadow-2xl">
+            <!-- FRONT FACE (SIGNATURE NAVY) -->
+            <div class="card-face absolute inset-0 rounded-2xl bg-[#0b1626] border border-brand-gold/40 p-4 sm:p-8 flex flex-col justify-between overflow-hidden shadow-2xl">
               <div class="flex items-center justify-between z-10">
                 <div class="w-9 h-9 sm:w-12 sm:h-12 flex items-center justify-center">
-                  <img src="logo.png" alt="MK Crest" class="w-full h-full object-contain drop-shadow" width="48" height="48" />
+                  <img src="logo.png" alt="MK Crest" class="w-full h-full object-contain logo-gold-glow" width="48" height="48" />
                 </div>
                 <div class="flex gap-1.5" aria-hidden="true">
                   <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-brand-gold"></span>
-                  <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-brand-navy"></span>
-                  <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-brand-goldDark"></span>
+                  <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-brand-white"></span>
+                  <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-brand-goldLight"></span>
                 </div>
               </div>
 
               <div class="text-center z-10 my-auto">
-                <div class="font-extrabold text-xl sm:text-3xl md:text-4xl text-brand-navy tracking-wider sm:tracking-widest uppercase">
+                <div class="font-extrabold text-xl sm:text-3xl md:text-4xl text-brand-white tracking-wider sm:tracking-widest uppercase">
                   MK OFFSET
                 </div>
-                <div class="h-[2px] w-20 sm:w-36 bg-brand-gold mx-auto my-1.5 sm:my-2"></div>
-                <div class="text-[9px] sm:text-xs md:text-sm font-bold text-[#a78037] tracking-[0.18em] sm:tracking-[0.2em] uppercase">
+                <div class="h-[1px] w-20 sm:w-36 bg-gradient-to-r from-transparent via-brand-gold to-transparent mx-auto my-1.5 sm:my-2"></div>
+                <div class="text-[9px] sm:text-xs md:text-sm font-bold text-brand-gold tracking-[0.18em] sm:tracking-[0.2em] uppercase">
                   ALL KIND OF PRINTING WORKS
                 </div>
               </div>
 
-              <div class="flex items-center justify-between z-10 text-[9px] sm:text-xs uppercase tracking-wider text-slate-700">
-                <span class="px-1.5 py-0.5 sm:px-2 rounded bg-brand-gold/20 border border-brand-gold text-brand-navy font-bold">
+              <div class="flex items-center justify-between z-10 text-[9px] sm:text-xs uppercase tracking-wider text-slate-300">
+                <span class="px-1.5 py-0.5 sm:px-2 rounded bg-brand-gold/15 border border-brand-gold/40 text-brand-gold font-bold">
                   Govt. Supplier
                 </span>
-                <span class="text-brand-navy font-bold">Sitapur (U.P.)</span>
+                <span class="text-brand-white font-semibold">Sitapur (U.P.)</span>
               </div>
             </div>
 
-            <!-- BACK FACE (CLEAN WHITE WITH LIVE SCANNABLE QR CODE) -->
-            <div class="card-face card-back-face absolute inset-0 rounded-2xl bg-white border-2 border-brand-gold/50 p-3.5 sm:p-6 flex flex-col justify-between overflow-hidden shadow-2xl">
+            <!-- BACK FACE (SIGNATURE NAVY WITH LIVE SCANNABLE QR CODE) -->
+            <div class="card-face card-back-face absolute inset-0 rounded-2xl bg-[#081220] border border-brand-gold/40 p-3.5 sm:p-6 flex flex-col justify-between overflow-hidden shadow-2xl">
               
-              <div class="flex items-center justify-between z-10 border-b border-brand-gold/40 pb-1 sm:pb-1.5">
+              <div class="flex items-center justify-between z-10 border-b border-brand-gold/20 pb-1 sm:pb-1.5">
                 <div>
-                  <div class="font-bold text-[13px] sm:text-lg text-brand-navy tracking-wider uppercase leading-tight">MK OFFSET</div>
-                  <div class="text-[8px] sm:text-xs text-[#a78037] font-bold uppercase tracking-wider">Government Order Supplier</div>
+                  <div class="font-bold text-[13px] sm:text-lg text-brand-gold tracking-wider uppercase leading-tight">MK OFFSET</div>
+                  <div class="text-[8px] sm:text-xs text-slate-300 uppercase tracking-wider">Government Order Supplier</div>
                 </div>
-                <span class="text-[8px] sm:text-xs font-bold text-brand-navy px-1.5 py-0.5 rounded bg-brand-gold/20 border border-brand-gold">Verified</span>
+                <span class="text-[8px] sm:text-xs font-bold text-brand-gold px-1.5 py-0.5 rounded bg-brand-gold/10 border border-brand-gold/30">Verified</span>
               </div>
 
               <!-- Content Row with QR Code and Contact Credentials -->
@@ -359,35 +359,35 @@
                 
                 <!-- Scannable QR Code Frame -->
                 <div class="shrink-0 flex flex-col items-center">
-                  <div class="w-14 h-14 sm:w-24 sm:h-24 p-0.5 sm:p-1 rounded-lg bg-white border-2 border-brand-navy shadow-md">
+                  <div class="w-14 h-14 sm:w-24 sm:h-24 p-0.5 sm:p-1 rounded-lg bg-white border border-brand-gold shadow-md">
                     <img src="mk_printers_qr.png" alt="Scan to visit portal" class="w-full h-full object-contain" width="96" height="96" />
                   </div>
-                  <span class="text-[7px] sm:text-[10px] text-brand-goldDark uppercase tracking-wider font-bold mt-0.5 sm:mt-1">Scan QR</span>
+                  <span class="text-[7px] sm:text-[10px] text-brand-gold uppercase tracking-wider font-bold mt-0.5 sm:mt-1">Scan QR</span>
                 </div>
 
                 <!-- Contact Details -->
                 <div class="space-y-1 sm:space-y-2 text-[11px] sm:text-sm flex-grow">
-                  <div class="flex items-center gap-1.5 sm:gap-2 text-slate-800">
+                  <div class="flex items-center gap-1.5 sm:gap-2 text-slate-200">
                     <i class="fa-solid fa-phone text-brand-gold text-[10px] sm:text-xs shrink-0" aria-hidden="true"></i>
-                    <span class="font-bold text-brand-navy tracking-wide text-[11px] sm:text-sm">+91 93366 21866</span>
+                    <span class="font-bold text-brand-white tracking-wide text-[11px] sm:text-sm">+91 93366 21866</span>
                   </div>
 
-                  <div class="flex items-center gap-1.5 sm:gap-2 text-slate-800">
+                  <div class="flex items-center gap-1.5 sm:gap-2 text-slate-200">
                     <i class="fa-solid fa-envelope text-brand-gold text-[10px] sm:text-xs shrink-0" aria-hidden="true"></i>
-                    <span class="font-bold text-brand-navy text-[10px] sm:text-sm truncate">abhinay368@gmail.com</span>
+                    <span class="font-medium text-slate-200 text-[10px] sm:text-sm truncate">abhinay368@gmail.com</span>
                   </div>
 
-                  <div class="flex items-start gap-1.5 sm:gap-2 text-slate-700">
+                  <div class="flex items-start gap-1.5 sm:gap-2 text-slate-200">
                     <i class="fa-solid fa-location-dot text-brand-gold text-[10px] sm:text-xs shrink-0 mt-0.5" aria-hidden="true"></i>
-                    <span class="font-medium text-slate-800 text-[9px] sm:text-xs leading-tight">Near Police Chowki, Thompsonganj, Sitapur - 261001</span>
+                    <span class="font-medium text-slate-200 text-[9px] sm:text-xs leading-tight">Near Police Chowki, Thompsonganj, Sitapur - 261001</span>
                   </div>
                 </div>
 
               </div>
 
-              <div class="flex items-center justify-between z-10 text-[7px] sm:text-[10px] uppercase text-slate-500 border-t border-slate-200 pt-1">
-                <span>3.5" x 2.0" Imperial White</span>
-                <span class="text-brand-navy font-bold">Sitapur, Uttar Pradesh</span>
+              <div class="flex items-center justify-between z-10 text-[7px] sm:text-[10px] uppercase text-slate-400 border-t border-brand-navyBorder pt-1">
+                <span>3.5" x 2.0" Standard</span>
+                <span class="text-brand-gold font-semibold">Sitapur, Uttar Pradesh</span>
               </div>
 
             </div>
