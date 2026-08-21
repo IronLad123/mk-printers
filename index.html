@@ -270,12 +270,12 @@
 
       </section>
 
-      <!-- INTERACTIVE 3D DIGITAL IDENTITY CARD -->
+      <!-- INTERACTIVE 3D DIGITAL IDENTITY CARD (WITH EMBEDDED LIVE QR) -->
       <section aria-labelledby="cardHeading" class="space-y-4">
         
         <div class="text-center space-y-1">
-          <h2 id="cardHeading" class="text-xs sm:text-sm uppercase tracking-widest text-brand-gold font-bold">Interactive Identity</h2>
-          <p class="text-xs sm:text-sm text-slate-300 uppercase tracking-wide">Tap card below to inspect front &amp; back</p>
+          <h2 id="cardHeading" class="text-xs sm:text-sm uppercase tracking-widest text-brand-gold font-bold">Interactive Identity Card</h2>
+          <p class="text-xs sm:text-sm text-slate-300 uppercase tracking-wide">Tap card below to inspect front &amp; back (Includes live scannable QR)</p>
         </div>
 
         <div class="card-3d-wrap max-w-xl mx-auto min-h-[240px] sm:min-h-[320px] flex items-center justify-center">
@@ -312,10 +312,10 @@
               </div>
             </div>
 
-            <!-- BACK FACE -->
-            <div class="card-face card-back-face absolute inset-0 rounded-2xl bg-[#081220] border border-brand-gold/40 p-5 sm:p-8 flex flex-col justify-between overflow-hidden shadow-2xl">
+            <!-- BACK FACE (WITH SCANNABLE QR CODE & EXACT LAYOUT) -->
+            <div class="card-face card-back-face absolute inset-0 rounded-2xl bg-[#081220] border border-brand-gold/40 p-4 sm:p-6 flex flex-col justify-between overflow-hidden shadow-2xl">
               
-              <div class="flex items-center justify-between z-10 border-b border-brand-gold/20 pb-2">
+              <div class="flex items-center justify-between z-10 border-b border-brand-gold/20 pb-1.5">
                 <div>
                   <div class="font-bold text-xs sm:text-base text-brand-gold tracking-wider uppercase">M.K. PRINTERS &amp; STATIONERS</div>
                   <div class="text-[9px] sm:text-xs text-slate-300 uppercase tracking-wider">Government Order Supplier</div>
@@ -323,31 +323,39 @@
                 <span class="text-[9px] sm:text-xs font-bold text-brand-gold px-2 py-0.5 rounded bg-brand-gold/10 border border-brand-gold/30">Verified</span>
               </div>
 
-              <div class="space-y-2 sm:space-y-2.5 z-10 my-auto text-xs sm:text-sm">
-                <div class="flex items-center gap-2.5 text-slate-200">
-                  <span class="w-5 h-5 sm:w-6 sm:h-6 rounded bg-brand-navyCard border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs" aria-hidden="true">
-                    <i class="fa-solid fa-phone"></i>
-                  </span>
-                  <span class="font-bold text-brand-white tracking-wide text-xs sm:text-sm">+91 93366 21866</span>
+              <!-- Content Row with QR Code and Contact Credentials -->
+              <div class="flex items-center gap-3.5 sm:gap-5 z-10 my-auto">
+                
+                <!-- Scannable QR Code Frame -->
+                <div class="shrink-0 flex flex-col items-center">
+                  <div class="w-16 h-16 sm:w-24 sm:h-24 p-1 rounded-lg bg-white border border-brand-gold shadow-md">
+                    <img src="mk_printers_qr.png" alt="Scan to visit portal" class="w-full h-full object-contain" width="96" height="96" />
+                  </div>
+                  <span class="text-[8px] sm:text-[10px] text-brand-gold uppercase tracking-wider font-bold mt-1">Scan QR</span>
                 </div>
 
-                <div class="flex items-center gap-2.5 text-slate-200">
-                  <span class="w-5 h-5 sm:w-6 sm:h-6 rounded bg-brand-navyCard border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs" aria-hidden="true">
-                    <i class="fa-solid fa-envelope"></i>
-                  </span>
-                  <span class="font-medium text-slate-200 text-xs sm:text-sm truncate">abhinay368@gmail.com</span>
+                <!-- Contact Details -->
+                <div class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm flex-grow">
+                  <div class="flex items-center gap-2 text-slate-200">
+                    <i class="fa-solid fa-phone text-brand-gold text-xs shrink-0" aria-hidden="true"></i>
+                    <span class="font-bold text-brand-white tracking-wide text-xs sm:text-sm">+91 93366 21866</span>
+                  </div>
+
+                  <div class="flex items-center gap-2 text-slate-200">
+                    <i class="fa-solid fa-envelope text-brand-gold text-xs shrink-0" aria-hidden="true"></i>
+                    <span class="font-medium text-slate-200 text-xs sm:text-sm truncate">abhinay368@gmail.com</span>
+                  </div>
+
+                  <div class="flex items-start gap-2 text-slate-200">
+                    <i class="fa-solid fa-location-dot text-brand-gold text-xs shrink-0 mt-0.5" aria-hidden="true"></i>
+                    <span class="font-medium text-slate-200 text-[10px] sm:text-xs leading-tight">Near Police Chowki, Thompsonganj, Sitapur - 261001</span>
+                  </div>
                 </div>
 
-                <div class="flex items-start gap-2.5 text-slate-200">
-                  <span class="w-5 h-5 sm:w-6 sm:h-6 rounded bg-brand-navyCard border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xs shrink-0 mt-0.5" aria-hidden="true">
-                    <i class="fa-solid fa-location-dot"></i>
-                  </span>
-                  <span class="font-medium text-slate-200 text-[11px] sm:text-xs leading-tight">Near Police Chowki, Holi Nagar, Station Road, Thompsonganj, Sitapur (261001)</span>
-                </div>
               </div>
 
-              <div class="flex items-center justify-between z-10 text-[8px] sm:text-[10px] uppercase text-slate-400">
-                <span>3.5" x 2.0"</span>
+              <div class="flex items-center justify-between z-10 text-[8px] sm:text-[10px] uppercase text-slate-400 border-t border-brand-navyBorder pt-1">
+                <span>3.5" x 2.0" Standard</span>
                 <span class="text-brand-gold font-semibold">Sitapur, Uttar Pradesh</span>
               </div>
 
